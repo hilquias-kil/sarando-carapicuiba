@@ -4,13 +4,13 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from "gatsby"
 
 const NavLink = ({ url, label }: { url: string, label: string }) => (
-  <li><Link to={url} className="text-red-700 hover:text-red-800 hover:underline">{label}</Link></li>
+  <li><Link to={url} className="text-red-700 font-bold hover:text-red-800 hover:underline ">{label}</Link></li>
 )
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
   return (
-    <header className="bg-white p-4 flex items-start justify-between items-center">
+    <header className="bg-white p-4 flex items-start justify-between items-center relative z-20">
       <img src={logo} />
       <nav>
         <button onClick={() => setOpenMenu(true)} className="md:hidden">
