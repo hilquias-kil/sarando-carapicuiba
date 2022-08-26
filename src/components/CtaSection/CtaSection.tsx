@@ -13,7 +13,7 @@ const Container = ({
       dark ? 'bg-cyan-800 justify-end' : 'bg-amber-100'
     } flex-grow flex `}
   >
-    <div className="p-6 lg:px-8 lg:py-10 lg:w-[calc(1024px/2)] xl:w-[calc(1280px/2)] box-border">
+    <div className="px-6 py-8 lg:px-8 lg:py-10 lg:w-[calc(1024px/2)] xl:w-[calc(1280px/2)] box-border">
       {children}
     </div>
   </div>
