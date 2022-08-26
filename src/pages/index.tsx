@@ -1,13 +1,15 @@
-import * as React from "react"
-import type { HeadFC } from "gatsby"
-import { Header } from "../components/Header"
-import { HeadingBanner } from "../components/HeadingBanner"
+import * as React from 'react'
+import type { HeadFC } from 'gatsby'
+import { Header } from '../components/Header'
+import { HeadingBanner } from '../components/HeadingBanner'
+import { CtaSection } from '../components/CtaSection'
 
 const IndexPage = () => {
   return (
     <main>
       <Header />
       <HeadingBanner />
+      <CtaSection />
     </main>
   )
 }
