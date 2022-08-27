@@ -10,10 +10,14 @@ const Container = ({
 }) => (
   <div
     className={` ${
-      dark ? 'bg-cyan-800 justify-end' : 'bg-amber-100'
+      dark ? 'bg-cyan-800 justify-end ' : 'bg-amber-100'
     } flex-grow flex `}
   >
-    <div className="px-6 py-8 lg:px-8 lg:py-10 lg:w-[calc(1024px/2)] xl:w-[calc(1280px/2)] box-border">
+    <div
+      className={`px-6 py-8 lg:px-0 lg:py-10 lg:w-[calc(1024px/2)] xl:w-[calc(1280px/2)] box-border ${
+        dark ? 'lg:pr-10' : 'lg:pl-10'
+      } `}
+    >
       {children}
     </div>
   </div>

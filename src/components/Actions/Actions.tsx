@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 
 export const Actions = () => (
-  <div className="p-6 lg:py-16 lg:w-[1024px] xl:w-[1280px] m-auto">
+  <div className="p-6 lg:px-0 lg:py-16 lg:w-[1024px] xl:w-[1280px] m-auto">
     <h2 className="font-bebas text-4xl lg:text-6xl mb-4">Ações</h2>
     <div className="flex flex-col md:flex-row gap-6 lg:gap-12">
       <article className="mb-6">
