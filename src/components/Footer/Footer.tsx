@@ -106,7 +106,8 @@ export const Footer = () => (
           </div>
           <div>
             <p className="text-amber-100 text-sm">
-              Copyright ©2022 All rights reserved
+              © Associação Sarando Carapicuíba 2022 - Todos os direitos
+              reservados. CNPJ: 05.392.117/0001-81.
             </p>
           </div>
         </div>
