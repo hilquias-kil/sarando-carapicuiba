@@ -38,7 +38,7 @@ export const Header = () => {
           <ul className="p-4 box-border flex flex-col gap-4 md:flex-row md:gap-6">
             <NavLink url="/quem-somos" label="Quem somos" />
             <NavLink url="/doacoes" label="Doações" />
-            <NavLink url="/voluntario" label="Seja um voluntario" />
+            <NavLink url="/voluntario" label="Seja um voluntário" />
             <NavLink url="/projetos" label="Projetos" />
             <NavLink url="#contato" label="Contato" />
           </ul>
