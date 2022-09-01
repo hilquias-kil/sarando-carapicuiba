@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HeadingBanner = () => {
   return (
-    <div className="relative after:content-[''] after:w-1/2 after:h-full after:left-0 after:top-0 after:absolute after:bg-red-700 after:bg-opacity-50">
+    <div className="relative bg-black after:content-[''] after:w-1/2 after:h-full after:left-0 after:top-0 after:absolute after:bg-red-700 after:bg-opacity-50">
       <img
         src="https://siteong.s3.sa-east-1.amazonaws.com/larm-rmah-AEaTUnvneik-unsplash.jpg"
         className="w-screen h-[calc(100vh-80px)] object-cover"

@@ -62,10 +62,14 @@ export const Footer = () => (
           </a>
           <div>
             <h3 className="text-2xl font-bold mb-6 text-amber-100">
-              Siganos nas redes sociais
+              Siga-nos nas redes sociais
             </h3>
             <div className="flex gap-4">
-              <a href="#">
+              <a
+                href="https://www.instagram.com/sarandocarapicuiba/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FiInstagram size="24px" className="text-amber-100" />
               </a>
               <a href="#">
@@ -94,7 +98,7 @@ export const Footer = () => (
 
           <div>
             <h3 className="text-2xl font-bold mb-6 text-amber-100">
-              Informacoes
+              Informações
             </h3>
             <ul className="flex flex-col gap-2">
               <NavLink

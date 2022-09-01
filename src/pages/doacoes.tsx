@@ -9,7 +9,10 @@ const IndexPage = () => {
   return (
     <main>
       <Header />
-      <HeadingPages title="Doações" />
+      <HeadingPages
+        title="Doações"
+        img="https://siteong.s3.sa-east-1.amazonaws.com/head-doacoes.jpg"
+      />
 
       <section className="p-6 lg:px-0 lg:py-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto ">
         <h3 className="font-bold text-xl mb-4 lg:text-3xl lg:mb-8">
