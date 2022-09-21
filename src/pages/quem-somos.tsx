@@ -9,23 +9,24 @@ const IndexPage = () => {
   return (
     <main>
       <Header />
-      <HeadingPages title="Quem somos" />
+      <HeadingPages
+        title="Quem somos"
+        img="https://siteong.s3.sa-east-1.amazonaws.com/cover-about-us.jpg"
+      />
 
       <section className="p-6 py-12 md:flex md:items-start md:gap-6 lg:px-0 lg:w-[1024px] xl:w-[1280px] lg:m-auto">
         <div className="flex-grow">
           <p className="mb-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.{' '}
+            Somos uma instituição sem fins lucrativos que visa levar
+            transformação de vidas através de projetos solidários a fim de unir
+            forças entre o setor publico, privado e comunidades com propósito de
+            promover projetos de capacitação e investimento em cada pessoa até
+            que ela tenha o domínio de sua própria vida.
           </p>
           <p className="mb-6">
-            Many desktop publishing packages and web page editors now use Lorem
-            Ipsum as their default model text, and a search for 'lorem ipsum'
-            will uncover many web sites still in their infancy. Various versions
-            have evolved over the years, sometimes by accident, sometimes on
-            purpose (injected humour and the like).
+            Missão: Demonstrar o amor através de ações. Através do amor ver e
+            desenvolver o potencial de cada pessoa pois, é pelo amor que vemos
+            em cada pessoa o caminho sem fim.
           </p>
           <p className="mb-6">
             <a

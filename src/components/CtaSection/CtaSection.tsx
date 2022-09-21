@@ -28,12 +28,12 @@ export const CtaSection = () => {
     <div className="flex flex-col md:flex-row">
       <Container dark>
         <h3 className="font-bebas text-4xl lg:text-6xl text-white mb-4">
-          faca uma doação
+          faça uma doação
         </h3>
         <p className="text-white mb-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
+          Quero fazer parte contribuindo com uma doação, para poder ajudar esse
+          trabalho a se manter, crescer e alcançar mais pessoas em Carapicuíba e
+          região.
         </p>
         <Link
           to="doacoes"
@@ -44,12 +44,12 @@ export const CtaSection = () => {
       </Container>
       <Container>
         <h3 className="font-bebas text-4xl lg:text-6xl text-cyan-800 mb-4">
-          Seja um voluntario
+          Seja um voluntário
         </h3>
         <p className="text-cyan-800 mb-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
+          Quero fazer parte sendo um voluntário, para participar das ações,
+          estar presente em eventos e contribuir com meu tempo servindo a essa
+          missão
         </p>
         <Link
           to="voluntario"
