@@ -58,7 +58,7 @@ export const Footer = () => (
             target="_blank"
             rel="noreferrer"
           >
-            <img src="https://siteong.s3.sa-east-1.amazonaws.com/map.png " />
+            <img src="/map.webp" width="403" height="301" alt="link para o mapa" />
           </a>
           <div>
             <h3 className="text-2xl font-bold mb-6 text-amber-100">

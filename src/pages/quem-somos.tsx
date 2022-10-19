@@ -11,7 +11,7 @@ const IndexPage = () => {
       <Header />
       <HeadingPages
         title="Quem somos"
-        img="https://siteong.s3.sa-east-1.amazonaws.com/cover-about-us.jpg"
+        img="/cover-about-us.webp"
       />
 
       <section className="p-6 py-12 md:flex md:items-start md:gap-6 lg:px-0 lg:w-[1024px] xl:w-[1280px] lg:m-auto">
@@ -39,8 +39,11 @@ const IndexPage = () => {
           </p>
         </div>
         <img
-          src="https://siteong.s3.sa-east-1.amazonaws.com/logo_sem_fundo_new.png"
-          className="md:w-1/2"
+          src="/logo.webp"
+          className="md:w-1/3"
+          width="733"
+          height="639"
+          alt="Associação Sarando Carapicuíba"
         />
       </section>
 
@@ -61,7 +64,7 @@ const IndexPage = () => {
           </p>
         </div>
         <img
-          src="https://siteong.s3.sa-east-1.amazonaws.com/quem-somos.jpg"
+          src="/about.webp"
           className="absolute left-0 top-0 w-full h-full object-cover z-0"
         />
       </section>
@@ -115,7 +118,7 @@ const IndexPage = () => {
         <div className="flex  flex-wrap gap-6 md:gap-14">
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-1.jpg"
+              src="/aline.webp"
               className="mb-4"
             />
             <span className="block font-bold">Aline Mayara</span>
@@ -123,7 +126,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-2.jpg"
+              src="/joaquim.webp"
               className="mb-4"
             />
             <span className="block font-bold">Joaquim Aparecido</span>
@@ -131,7 +134,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-3.jpg"
+              src="/jucilene.webp"
               className="mb-4"
             />
             <span className="block font-bold">Jucilene Ribeiro</span>
@@ -139,7 +142,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-4.jpg"
+              src="/henrique.webp"
               className="mb-4"
             />
             <span className="block font-bold">Henrique Moura</span>
@@ -147,7 +150,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-5.jpg"
+              src="/larissa.webp"
               className="mb-4"
             />
             <span className="block font-bold">Larissa de Oliveira</span>
@@ -155,7 +158,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-6.jpg"
+              src="/adilas.webp"
               className="mb-4"
             />
             <span className="block font-bold">Adilans de Deus</span>
@@ -163,7 +166,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-7.jpg"
+              src="/douglas.webp"
               className="mb-4"
             />
             <span className="block font-bold">Douglas da Silva</span>
@@ -171,7 +174,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-8.jpg"
+              src="/wn.webp"
               className="mb-4"
             />
             <span className="block font-bold">Wellington Soares</span>
@@ -179,7 +182,7 @@ const IndexPage = () => {
           </div>
           <div className="w-[140px] md:w-[200px]">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/time/time-9.jpg"
+              src="/karen.webp"
               className="mb-4"
             />
             <span className="block font-bold">Karen Vieira </span>

@@ -11,7 +11,7 @@ const IndexPage = () => {
       <Header />
       <HeadingPages
         title="Doações"
-        img="https://siteong.s3.sa-east-1.amazonaws.com/head-doacoes.jpg"
+        img="/doacoes.webp"
       />
 
       <section className="p-6 lg:px-0 lg:py-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto ">
@@ -82,14 +82,16 @@ const IndexPage = () => {
         <div className="flex gap-6 items-center">
           <a href="#">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/sage.png"
+              src="/sage.webp"
               alt="Sage Cursos Online"
+              className='w-[200px]'
             />
           </a>
           <a href="#">
             <img
-              src="https://siteong.s3.sa-east-1.amazonaws.com/sara.png"
+              src="/saranossaterra.webp"
               alt="Sara Nossa Terra"
+              className='w-[200px]'
             />
           </a>
         </div>
