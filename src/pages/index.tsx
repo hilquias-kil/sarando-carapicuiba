@@ -3,8 +3,8 @@ import type { HeadFC } from 'gatsby'
 import { Header } from '../components/Header'
 import { HeadingBanner } from '../components/HeadingBanner'
 import { CtaSection } from '../components/CtaSection'
-import { Actions } from '../components/Actions/Actions'
 import { Footer } from '../components/Footer'
+import { Projects } from '../components/Projects'
 
 const IndexPage = () => {
   return (
@@ -12,7 +12,7 @@ const IndexPage = () => {
       <Header />
       <HeadingBanner />
       <CtaSection />
-      <Actions />
+      <Projects />
       <Footer />
     </main>
   )

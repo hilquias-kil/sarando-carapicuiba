@@ -48,7 +48,6 @@ export const Header = () => {
             <NavLink url="/quem-somos" label="Quem somos" />
             <NavLink url="/doacoes" label="Doações" />
             <NavLink url="/voluntario" label="Seja um voluntário" />
-            <NavLink url="/projetos" label="Projetos" />
             <NavLink
               url="#contato"
               label="Contato"
