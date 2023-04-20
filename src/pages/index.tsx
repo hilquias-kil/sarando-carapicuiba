@@ -5,6 +5,7 @@ import { HeadingBanner } from '../components/HeadingBanner'
 import { CtaSection } from '../components/CtaSection'
 import { Footer } from '../components/Footer'
 import { Projects } from '../components/Projects'
+import { Actions } from '../components/Actions'
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <HeadingBanner />
       <CtaSection />
       <Projects />
+      <Actions />
       <Footer />
     </main>
   )
