@@ -13,9 +13,9 @@ export const Projects = () => (
           </a>
         </article>
         <article className=''>
-          <a href="#" className='w-full h-[200px] overflow-hidden block relative'>
+          <a href="/projetos/aulas-de-bateria" className='w-full h-[200px] overflow-hidden block relative'>
             <img src="/bateria.webp" className=" w-full h-full object-cover" />
-            <h3 className='absolute left-0 bottom-0 bg-black bg-opacity-50 p-4 w-full text-white font-bebas text-3xl'>aula de bateria</h3>
+            <h3 className='absolute left-0 bottom-0 bg-black bg-opacity-50 p-4 w-full text-white font-bebas text-3xl'>Aulas de bateria</h3>
           </a>
         </article>
         <article className=''>
