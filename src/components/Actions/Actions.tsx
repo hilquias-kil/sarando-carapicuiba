@@ -26,7 +26,7 @@ export const Actions = () => {
         <div>
           {actions.data.slice(1).map((action) => (
             <article className="mb-6 flex gap-4" key={action.id}>
-              <Link to="/detail" className=" max-w-[40%]">
+              <Link to={action.url} className=" max-w-[40%]">
                 <img
                   src={action.image}
                   className="mb-4"
@@ -34,13 +34,13 @@ export const Actions = () => {
               </Link>
               <div>
                 <h3 className="font-bold">
-                  <Link to="/detail">{action.title}</Link>
+                  <Link to={action.url}>{action.title}</Link>
                 </h3>
                 <span className="text-neutral-600 italic block">
                   {action.date}
                 </span>
                 <p>
-                  <Link to="/detail">
+                  <Link to={action.url}>
                     {action.desc}
                   </Link>
                 </p>

@@ -42,7 +42,7 @@ export const Footer = () => (
                 href="mailto:contato@sarandocarapicuiba.org"
                 className="text-amber-100"
               >
-                contato@sarandocarapicuiba.org
+                associacao-sarando-carapicuiba@outlook.com
               </a>
             </div>
             <address className="flex items-center gap-4 not-italic mb-6">
