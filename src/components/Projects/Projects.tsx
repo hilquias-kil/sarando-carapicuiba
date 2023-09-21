@@ -31,7 +31,7 @@ export const Projects = () => (
             </h3>
           </a>
         </article>
-        <article>
+        {/* <article>
           <a
             href="/projetos/instituto-de-vencedores"
             className="w-full h-[200px] overflow-hidden block relative"
@@ -41,7 +41,7 @@ export const Projects = () => (
               Instituto de Vencedores
             </h3>
           </a>
-        </article>
+        </article> */}
         <article>
           <a
             href="/projetos/aulas-de-jiu-jitsu"
@@ -56,7 +56,7 @@ export const Projects = () => (
             </h3>
           </a>
         </article>
-        <article>
+        {/* <article>
           <a
             href="/projetos/revisao-de-vidas"
             className="w-full h-[200px] overflow-hidden block relative"
@@ -69,14 +69,14 @@ export const Projects = () => (
               Revisão de vidas
             </h3>
           </a>
-        </article>
+        </article> */}
         <article>
           <a
             href="/projetos/socioeducativo"
             className="w-full h-[200px] overflow-hidden block relative"
           >
             <img
-              src="/socioeducativo.webp"
+              src="/socioeducacional.webp"
               className=" w-full h-full object-cover"
             />
             <h3 className="absolute left-0 bottom-0 bg-black bg-opacity-50 p-4 w-full text-white font-bebas text-3xl">
