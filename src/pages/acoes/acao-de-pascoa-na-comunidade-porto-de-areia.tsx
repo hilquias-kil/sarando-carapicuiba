@@ -12,11 +12,18 @@ const Acao = () => (
       </h3>
       <h4 className="text-red-800 font-bold mb-4 lg:text-xl">16/04/2023</h4>
       <img
-        src="/acoes/image.webp"
+        src="/actions/acao-1/capa.webp"
         className="w-full lg:h-[600px] object-cover mb-6"
       />
 
-      <p className="mb-12 lg:text-xl">texto</p>
+      <p className="mb-12 lg:text-xl">
+        A Páscoa é um momento de renovação, amor e união. Porém, para muitas
+        famílias, celebrar essa data se torna um desafio devido às adversidades
+        financeiras. Pensando em tornar essa época ainda mais especial e em
+        levar um sorriso ao rosto de nossas crianças, A Associação Sarando
+        Carapicuíba promoveu uma acao de distribuicao de ovos de pascoa na
+        comunidade Porto de Areia no dia 16/04/2023.
+      </p>
     </section>
     <Footer />
   </main>

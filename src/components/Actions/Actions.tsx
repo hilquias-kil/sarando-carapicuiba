@@ -9,7 +9,7 @@ export const Actions = () => {
     <div className="p-6 lg:px-0 lg:py-16 lg:w-[1024px] xl:w-[1280px] m-auto">
       <h2 className="font-bebas text-4xl lg:text-6xl mb-4">Ações</h2>
       <div className="flex flex-col md:flex-row gap-6 lg:gap-12">
-        <article className="mb-6">
+        <article className="mb-6 md:w-1/2">
           <Link to={firstAction.url}>
             <img src={firstAction.image} className="mb-4" />
           </Link>
@@ -23,16 +23,16 @@ export const Actions = () => {
             <Link to={firstAction.url}>{firstAction.desc}</Link>
           </p>
         </article>
-        <div>
+        <div className='md:w-1/2'>
           {actions.data.slice(1).map((action) => (
-            <article className="mb-6 flex gap-4" key={action.id}>
-              <Link to={action.url} className=" max-w-[40%]">
+            <article className="mb-6 flex flex-col md:flex-row gap-4" key={action.id}>
+              <Link to={action.url} className="md:w-[50%]">
                 <img
                   src={action.image}
                   className="mb-4"
                 />
               </Link>
-              <div>
+              <div className="md:w-[50%]">
                 <h3 className="font-bold">
                   <Link to={action.url}>{action.title}</Link>
                 </h3>

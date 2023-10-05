@@ -34,7 +34,7 @@ export const Footer = () => (
           <div>
             <div className="flex items-center gap-4 mb-6">
               <FiPhone size="24px" className="text-amber-100" />
-              <span className="text-amber-100">11 97362 8392</span>
+              <span className="text-amber-100">11 98195-0343</span>
             </div>
             <div className="flex items-center gap-4 mb-6">
               <FiMail size="24px" className="text-amber-100" />
