@@ -12,10 +12,12 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-postcss',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: '24234wr34',
-      },
+        trackingIds:[
+          'G-6N23FX10H6'
+        ]
+      }
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
