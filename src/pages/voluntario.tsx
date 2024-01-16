@@ -10,7 +10,7 @@ const IndexPage = () => {
       <Header />
       <HeadingPages title="Seja um voluntário" img="/cover-volunter.webp" />
 
-      <section className="px-6 py-12 lg:py-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto md:flex md:items-start md:gap-6 lg:gap-12">
+      <section className="px-6 pt-12 lg:pt-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto md:flex md:items-start md:gap-6 lg:gap-12">
         <img src="/voluntarios.webp" className="mb-6 flex-grow md:w-1/2" />
         <div className="flex-grow">
           <h4 className="text-red-800 font-bold mb-2">Venha fazer parte</h4>
@@ -19,10 +19,10 @@ const IndexPage = () => {
           </h3>
           <p className="mb-6">
             Há algo extraordinariamente gratificante em doar seu tempo e
-            habilidades em prol de uma causa maior. Na Associação Sarando Carapicuíba,
-            acreditamos que todos têm algo valioso a contribuir e que juntos,
-            com paixão e dedicação, podemos criar um impacto profundo em nossa
-            comunidade.
+            habilidades em prol de uma causa maior. Na Associação Sarando
+            Carapicuíba, acreditamos que todos têm algo valioso a contribuir e
+            que juntos, com paixão e dedicação, podemos criar um impacto
+            profundo em nossa comunidade.
           </p>
           <p className="mb-6">
             Ao se tornar voluntário conosco, você terá a oportunidade de:
@@ -59,31 +59,48 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="px-6 py-12  lg:py-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto">
-        <h4 className="text-red-800 font-bold mb-2 ">Quero fazer parte</h4>
-        <h3 className="font-bebas text-4xl mb-6 md:text-6xl">
-          Como se tornar um voluntário
-        </h3>
-        <p className="mb-6">
-          Convidamos você a explorar essa jornada conosco. Não importa sua
-          idade, formação ou experiência, há um lugar para você na Associação Sarando Carapicuíba. Junte-se a nós, compartilhe seu tempo e talento, e descubra o
-          poder transformador do voluntariado. Sua jornada para fazer a
-          diferença começa aqui!
-        </p>
-        <ul>
-          <li className="flex items-center gap-2 mb-4">
-            <span className="text-4xl font-bebas bg-red-800 text-white block py-1 px-2">
-              1
-            </span>{' '}
-            <span className="text-xl">Baixe o termo, preencha e assine</span>
-          </li>
-          <li className="flex items-center gap-2 mb-4 ">
-            <span className="text-4xl font-bebas bg-red-800 text-white  block py-1 px-2">
-              2
-            </span>{' '}
-            <span className="text-xl">Entre em contato conosco</span>
-          </li>
-        </ul>
+      <section className="px-6 py-12  lg:py-16 lg:w-[1024px] xl:w-[1280px] lg:m-auto md:flex md:flex-row-reverse md:items-start md:gap-6 lg:gap-12">
+        <img
+          src="/actions/acao-4/murao_2.webp"
+          className="mb-6 flex-grow md:w-1/2"
+        />
+        <div className="flex-grow">
+          <h4 className="text-red-800 font-bold mb-2 ">Quero fazer parte</h4>
+          <h3 className="font-bebas text-4xl mb-6 md:text-6xl">
+            Como se tornar um voluntário
+          </h3>
+          <p className="mb-6">
+            Convidamos você a explorar essa jornada conosco. Não importa sua
+            idade, formação ou experiência, há um lugar para você na Associação
+            Sarando Carapicuíba. Junte-se a nós, compartilhe seu tempo e
+            talento, e descubra o poder transformador do voluntariado. Sua
+            jornada para fazer a diferença começa aqui!
+          </p>
+          <ul>
+            <li className="flex items-center gap-2 mb-4">
+              <span className="text-4xl font-bebas bg-red-800 text-white block py-1 px-2">
+                1
+              </span>{' '}
+              <span className="text-xl">
+                Preencham o{' '}
+                <a
+                  href="https://forms.gle/HKefw1S6r5Vmn6M16"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline font-bold"
+                >
+                  formulário
+                </a>
+              </span>
+            </li>
+            <li className="flex items-center gap-2 mb-4 ">
+              <span className="text-4xl font-bebas bg-red-800 text-white  block py-1 px-2">
+                2
+              </span>{' '}
+              <span className="text-xl">Entre em contato conosco</span>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <Footer />
