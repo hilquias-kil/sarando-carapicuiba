@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro'
+import FactsBlock from '../components/FactsBlock.astro'
+import SectionRule from '../components/SectionRule.astro'
+import { diretoria } from '../lib/collections'
+
+const membros = await diretoria()
+---
+
+<Base
+  title="Quem somos | Associação Sarando Carapicuíba"
+  description="Missão, pilares, diretoria, CNPJ e endereço da Associação Sarando Carapicuíba, em Carapicuíba, São Paulo."
+  ogDescription="Quem responde pela Associação Sarando Carapicuíba: a diretoria de nove pessoas, o CNPJ e o endereço da sede."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Quem somos</h1>
+      <div class="duas-colunas">
+        <div class="measure">
+          <p class="lead">
+            A Associação Sarando Carapicuíba é uma associação sem fins lucrativos com sede na
+            Av. Celeste, 94, no Centro de Carapicuíba. A gente mantém quatro projetos gratuitos
+            na sede e leva ações às comunidades da cidade.
+          </p>
+          <p class="espaco-m">
+            A missão cabe em uma frase: demonstrar o amor através de ações. A palavra que
+            carrega a frase é ação. O que a associação faz tem sempre data, lugar e gente
+            presente.
+          </p>
+        </div>
+        <FactsBlock />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>A fé da associação</h2>
+      <div class="measure espaco-m">
+        <p>
+          A gente é uma associação cristã e não esconde isso. "Cremos no poder de Deus sobre
+          Carapicuíba" é uma declaração da diretoria, escrita por ela.
+        </p>
+        <p class="espaco-m">
+          Isso não é condição para ninguém. Os projetos e as ações são abertos a qualquer
+          pessoa, de qualquer religião ou de nenhuma, e nenhuma atividade exige participação
+          religiosa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <h2>Três pilares</h2>
+      <div class="tres-colunas pilares">
+        <div>
+          <h3>Amor de Deus</h3>
+          <p class="secondary">
+            É de onde a associação diz que vem o trabalho, e é por isso que a missão começa pela
+            palavra amor.
+          </p>
+        </div>
+        <div>
+          <h3>Social</h3>
+          <p class="secondary">
+            Chegar perto da família antes de ela precisar pedir. Cesta, roupa, material,
+            presença no bairro.
+          </p>
+        </div>
+        <div>
+          <h3>Capacitação</h3>
+          <p class="secondary">
+            Ensinar alguma coisa que fique depois que a gente for embora. Um ofício, um
+            instrumento, um esporte.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>A diretoria</h2>
+      <p class="measure espaco-s">
+        São nove pessoas, nenhuma delas remunerada. Os nomes estão publicados porque uma
+        associação que pede doação precisa dizer quem responde por ela.
+      </p>
+      <SectionRule />
+      <ul class="mosaico">
+        {
+          membros.map((pessoa) => (
+            <li>
+              <img
+                src={pessoa.data.foto}
+                alt={`Retrato de ${pessoa.data.nome}`}
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span class="mosaico__nome">{pessoa.data.nome}</span>
+              <span class="mosaico__cargo">{pessoa.data.cargo}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .pilares h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* The logo's tile grid, made literal: a heart assembled from people. */
+  .mosaico {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  @media (min-width: 620px) {
+    .mosaico {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .mosaico {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+  .mosaico li {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .mosaico img {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  .mosaico__nome {
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+  .mosaico__cargo {
+    color: var(--color-accent-deep);
+    font-size: var(--text-small);
+  }
+</style>

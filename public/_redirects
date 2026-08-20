@@ -1,0 +1,9 @@
+# Real 301s. Astro's `redirects` config emits meta refresh without an adapter,
+# which is not good enough for an indexed site.
+#
+# The two retired church-linked projects.
+/projetos/instituto-de-vencedores   /projetos            301
+/projetos/revisao-de-vidas          /projetos            301
+#
+# @astrojs/sitemap emits sitemap-index.xml; Search Console has sitemap.xml.
+/sitemap.xml                        /sitemap-index.xml   301

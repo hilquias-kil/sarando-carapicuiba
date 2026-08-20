@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro'
+import { site, formatarData } from '../lib/site'
+
+/** Bump this whenever the text below changes. It is published on the page. */
+const atualizadaEm = new Date('2026-08-19T00:00:00Z')
+---
+
+<Base
+  title="Política de privacidade | Associação Sarando Carapicuíba"
+  description="Como a Associação Sarando Carapicuíba trata dados neste site: estatística de acesso, cookies, uso de imagem e o canal para pedidos da LGPD."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Política de privacidade</h1>
+      <div class="measure bloco">
+        <p class="lead">
+          Esta página diz o que este site coleta, o que ele não coleta e para quem escrever se
+          você quiser alguma coisa apagada.
+        </p>
+        <p class="secondary">
+          Última atualização: <time datetime="2026-08-19">{formatarData(atualizadaEm)}</time>.
+        </p>
+      </div>
+
+      <div class="measure politica">
+        <h2>Quem é responsável</h2>
+        <p>
+          A responsável por este site é a {site.nome}, CNPJ <span class="tabular"
+            >{site.cnpj}</span
+          >, com sede na {site.endereco}.
+        </p>
+        <p>
+          Para qualquer assunto desta página, escreva para
+          <a class="inline" href={`mailto:${site.email}`}>{site.email}</a>. Quem lê é a
+          diretoria.
+        </p>
+
+        <h2>O que este site não coleta</h2>
+        <p>
+          Este site não tem cadastro, não tem login, não tem carrinho e não tem formulário.
+          Nenhuma página aqui pede nome, telefone, e-mail, CPF ou endereço.
+        </p>
+        <p>
+          Quando você fala com a associação, é por WhatsApp ou por e-mail, e aí os seus dados
+          ficam onde essa conversa acontece, não neste site.
+        </p>
+
+        <h2>Estatística de acesso e cookies</h2>
+        <p>
+          Este site usa o Google Analytics 4 para contar visitas, saber quais páginas são lidas
+          e de onde as pessoas chegam. Serve para decidir o que escrever, e é a única coisa
+          medida aqui.
+        </p>
+        <p>
+          <strong>Nada disso carrega antes de você aceitar.</strong> Na primeira visita aparece uma
+          barra com duas opções. Se você recusar, o Google Analytics não é carregado e o site funciona
+          igual, inteiro. Se você aceitar, o Google grava cookies no seu navegador com nomes começados
+          em <code>_ga</code>, que servem para não contar você duas vezes.
+        </p>
+        <p>
+          Os dados de navegação guardados pelo Google Analytics são apagados depois de
+          <strong>2 meses</strong>. O que sobra depois disso é número somado, sem ninguém
+          dentro.
+        </p>
+        <p>
+          Esses dados são processados pelo Google, em servidores fora do Brasil. A política do
+          Google vale sobre eles também.
+        </p>
+        <p>
+          A base legal para essa medição é o seu consentimento, previsto no art. 7º, inciso I,
+          da LGPD. Você pode mudar de ideia quando quiser: limpe os cookies deste site no seu
+          navegador e a barra volta a perguntar.
+        </p>
+
+        <h2>Fotos de pessoas</h2>
+        <p>
+          Este site publica fotos das ações e dos projetos, e nelas aparecem pessoas
+          reconhecíveis, incluindo crianças. Elas estão aqui porque são a prova do que a
+          associação fez, e não como ilustração.
+        </p>
+        <p>
+          <strong>
+            Se você, ou uma criança sob sua responsabilidade, aparece numa foto e você não quer
+            que ela fique no ar, escreva para
+            <a class="inline" href={`mailto:${site.email}`}>{site.email}</a> dizendo qual página.
+          </strong>
+          A foto sai, e não precisa explicar por quê.
+        </p>
+        <p>
+          Nas ações a partir de agora, a associação pede autorização por escrito para
+          fotografar, e a autorização de quem tem menos de 18 anos é assinada pelo responsável.
+        </p>
+
+        <h2>Links para fora daqui</h2>
+        <p>
+          Este site tem link para o Instagram da associação, para o WhatsApp e para o Google
+          Maps. São serviços de outras empresas, com política própria, e o que você faz lá não
+          passa por aqui.
+        </p>
+
+        <h2>Seus direitos</h2>
+        <p>
+          A LGPD, no art. 18, dá a você o direito de saber se tem dado seu sendo tratado, de
+          acessar, de corrigir, de pedir a eliminação e de revogar o consentimento.
+        </p>
+        <p>
+          Como este site não coleta dado pessoal identificável, o pedido mais comum aqui vai ser
+          sobre foto, e ele está resolvido no parágrafo acima. Para os outros, escreva para
+          <a class="inline" href={`mailto:${site.email}`}>{site.email}</a>. Nós respondemos em
+          até 15 dias.
+        </p>
+        <p>
+          A associação não tem encarregado de proteção de dados nomeado. O e-mail acima é o
+          canal, e ele é atendido pela diretoria.
+        </p>
+
+        <h2>Mudanças nesta página</h2>
+        <p>
+          Se esta página mudar, a data lá em cima muda junto. Não tem versão antiga arquivada.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .bloco {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .politica {
+    margin-top: 2.5rem;
+  }
+  .politica h2 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .politica p + p {
+    margin-top: 1rem;
+  }
+  .politica code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--color-accent-tint);
+    padding: 0.1em 0.3em;
+  }
+</style>

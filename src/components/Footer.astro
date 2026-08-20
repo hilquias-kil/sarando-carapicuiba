@@ -1,0 +1,122 @@
+---
+import { site, nav, cta, destino } from '../lib/site'
+import Icon from './Icon.astro'
+const ano = new Date().getFullYear()
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h2 id="contato">Contato</h2>
+    <p class="site-footer__note">
+      A associação não tem formulário. Quem responde é gente da diretoria, pelo WhatsApp ou pelo
+      e-mail.
+    </p>
+
+    <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <a class="site-footer__line" href={site.whatsapp} target="_blank" rel="noreferrer">
+          <Icon name="whatsapp" />
+          <span class="tabular">{site.telefoneDisplay}</span>
+        </a>
+        <a class="site-footer__line" href={`mailto:${site.email}`}>
+          <Icon name="mail" />
+          <span>{site.email}</span>
+        </a>
+        <a class="site-footer__line" href={site.mapa} target="_blank" rel="noreferrer">
+          <Icon name="pin" />
+          <address>{site.endereco}</address>
+        </a>
+        <a class="site-footer__line" href={site.instagram} target="_blank" rel="noreferrer">
+          <Icon name="instagram" />
+          <span>{site.instagramHandle}</span>
+        </a>
+      </div>
+
+      <nav class="site-footer__col" aria-label="Rodapé">
+        <ul>
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))
+          }
+          <li><a href={destino.voluntario}>{cta.voluntario}</a></li>
+          <li><a href="/politica-de-privacidade">Política de privacidade</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="site-footer__legal">
+      <span class="tabular">CNPJ {site.cnpj}</span>
+      <span>© {ano} {site.nome}</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-panel-deep);
+    color: var(--color-on-panel);
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+  }
+  .site-footer h2 {
+    margin-bottom: 0.5rem;
+  }
+  .site-footer__note {
+    color: var(--color-on-panel-2);
+    max-width: 44ch;
+    margin-bottom: 2rem;
+  }
+  .site-footer__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .site-footer__grid {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+  .site-footer__col {
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+  }
+  .site-footer__line {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
+  .site-footer__line:hover span,
+  .site-footer__line:hover address {
+    text-decoration: underline;
+  }
+  .site-footer address {
+    font-style: normal;
+  }
+  .site-footer__col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .site-footer__col a {
+    text-decoration: none;
+  }
+  .site-footer__col ul a:hover {
+    text-decoration: underline;
+  }
+  .site-footer__legal {
+    margin-top: 2.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-on-panel-2);
+    font-size: var(--text-small);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+  }
+</style>

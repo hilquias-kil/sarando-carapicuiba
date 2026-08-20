@@ -1,0 +1,186 @@
+---
+import { Image } from 'astro:assets'
+import Base from '../layouts/Base.astro'
+import heroEmpresas from '../assets/hero-reserva.webp'
+import FactsBlock from '../components/FactsBlock.astro'
+import { site, cta, conta, destino } from '../lib/site'
+---
+
+<Base
+  title="Para empresas | Associação Sarando Carapicuíba"
+  description="Como a sua empresa pode patrocinar uma ação, doar bens ou doar dinheiro para a Associação Sarando Carapicuíba, em Carapicuíba."
+  ogDescription="Patrocine uma ação com data, comunidade e foto. Ou doe bens. Ou doe dinheiro."
+>
+  <section class="hero-empresas bleed">
+    <Image
+      src={heroEmpresas}
+      alt="Voluntários da associação durante uma entrega em uma comunidade de Carapicuíba"
+      width={1280}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="hero-empresas__foto"
+    />
+    <div class="scrim-hero hero-empresas__scrim"></div>
+    <div class="wrap hero-empresas__conteudo">
+      <h1>Para empresas</h1>
+      <p class="hero-empresas__apoio">
+        Nós somos uma associação de Carapicuíba e trabalhamos com empresas de Carapicuíba. Tem
+        três formas de a sua empresa entrar, e elas estão em ordem de utilidade para nós:
+        patrocinar uma ação, doar bens, doar dinheiro.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Patrocine uma ação</h2>
+      <div class="measure bloco">
+        <p>
+          Uma ação é um dia numa comunidade da cidade. Tem data marcada, lista do que vai ser
+          levado, e foto depois.
+        </p>
+        <p>
+          A sua empresa banca uma inteira. No fim existe uma data, um bairro e um registro do
+          que foi entregue, com o nome da empresa junto se ela quiser aparecer.
+        </p>
+        <p>
+          As quatro <a class="inline" href="/acoes">ações já feitas</a> estão publicadas neste site,
+          com data e foto. É exatamente esse o material que a sua empresa recebe depois.
+        </p>
+        <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.associacao}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Doação de bens</h2>
+      <div class="measure bloco">
+        <p>
+          O que a associação usa: alimento não perecível, roupa e calçado, material escolar,
+          instrumento, material esportivo, material de construção para a sede.
+        </p>
+        <p>
+          Antes de tirar mercadoria do estoque, confirme com o seu contador como isso entra na
+          contabilidade da sua empresa. Essa parte é com ele.
+        </p>
+        <p>
+          Se o que a sua empresa vende não é o que falta aqui, dinheiro rende mais. Com dinheiro
+          nós compramos exatamente o que a ação precisa.
+        </p>
+        <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.associacao}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <h2>Doação em dinheiro</h2>
+      <div class="duas-colunas">
+        <div class="measure bloco">
+          <p>
+            A conta está no nome da própria associação. Nós emitimos a declaração de recebimento
+            da doação.
+          </p>
+          <p>
+            Sobre imposto, quem responde é a contabilidade da sua empresa. Nós não prometemos
+            benefício fiscal nenhum e não damos palpite sobre a sua declaração.
+          </p>
+          <p>
+            O que nós fazemos é papel: a declaração de recebimento da doação, e o depósito numa
+            conta que está no nome da associação. Leve os dois para o seu contador e ele diz o
+            resto.
+          </p>
+        </div>
+        <div class="facts facts--panel espaco-m">
+          <dl>
+            <div><dt>Titular</dt><dd>{conta.titular}</dd></div>
+            <div><dt>CNPJ, e chave PIX</dt><dd>{conta.chavePix}</dd></div>
+            <div><dt>Instituição</dt><dd>{conta.instituicao}</dd></div>
+            <div><dt>Agência</dt><dd>{conta.agencia}</dd></div>
+            <div><dt>Conta</dt><dd>{conta.numero}</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Quem está do outro lado</h2>
+      <div class="duas-colunas">
+        <div class="measure bloco">
+          <p>
+            A associação tem diretoria de nove pessoas, com nome e cargo publicados, sede
+            própria com endereço de rua e CNPJ ativo. Está tudo em
+            <a class="inline" href="/quem-somos">Quem somos</a>.
+          </p>
+          <p>
+            Ninguém aqui recebe salário, nem a diretoria. O que a sua empresa doar sai em cesta,
+            material e transporte, e não em folha de pagamento.
+          </p>
+          <p>
+            Se a sua empresa precisa de outros documentos para aprovar a doação, escreva antes
+            de decidir o valor. Nós dizemos o que existe e o que ainda não existe.
+          </p>
+        </div>
+        <FactsBlock />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Falar com a gente</h2>
+      <div class="measure bloco">
+        <p>
+          WhatsApp <a class="inline tabular" href={site.whatsapp}>{site.telefoneDisplay}</a> é o caminho
+          mais rápido, e é onde a diretoria responde.
+        </p>
+        <p>
+          Para a sua empresa que precisa de rastro escrito,
+          <a class="inline" href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+        <p>
+          Não temos formulário. Ninguém aqui é pago para vigiar caixa de entrada de formulário,
+          e uma mensagem parada é pior que nenhum canal.
+        </p>
+        <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.associacao}</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-empresas {
+    position: relative;
+    min-height: min(52vh, 460px);
+    display: flex;
+    align-items: flex-end;
+    background: var(--color-panel);
+    overflow: hidden;
+  }
+  .hero-empresas__foto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-empresas__scrim {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-empresas__conteudo {
+    position: relative;
+    z-index: 2;
+    color: var(--color-on-panel);
+    padding-block: clamp(2rem, 6vw, 3.5rem);
+  }
+  .hero-empresas__apoio {
+    margin-top: 1.1rem;
+    max-width: 56ch;
+    font-size: var(--text-lead);
+  }
+</style>

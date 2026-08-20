@@ -1,0 +1,195 @@
+---
+import { nav } from '../lib/site'
+import Icon from './Icon.astro'
+
+interface Props {
+  /** Inverted sits over the hero photograph. Home only. */
+  inverted?: boolean
+}
+const { inverted = false } = Astro.props
+const path = Astro.url.pathname.replace(/\/$/, '') || '/'
+const isActive = (href: string) => path === href || path.startsWith(href + '/')
+---
+
+<header class:list={['site-header', inverted && 'site-header--inverted']}>
+  <div class="wrap site-header__bar">
+    <a href="/" class="site-header__brand">
+      <img src="/logo.webp" width="46" height="40" alt="" />
+      <span>Associação Sarando Carapicuíba</span>
+    </a>
+
+    <button
+      type="button"
+      class="site-header__toggle"
+      data-nav-open
+      aria-expanded="false"
+      aria-controls="nav-principal"
+    >
+      <Icon name="menu" size={24} />
+      <span class="sr-only">Abrir o menu</span>
+    </button>
+
+    <nav id="nav-principal" class="site-nav" aria-label="Principal">
+      <button type="button" class="site-nav__close" data-nav-close>
+        <Icon name="close" size={24} />
+        <span class="sr-only">Fechar o menu</span>
+      </button>
+      <ul>
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .site-header {
+    background: var(--color-canvas);
+    border-bottom: 1px solid var(--color-rule);
+    position: relative;
+    z-index: 30;
+  }
+
+  /* Over the hero photograph. The 0.75 top stop of the hero scrim is what
+     makes this legible, so it has no ground of its own. */
+  .site-header--inverted {
+    background: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    color: var(--color-on-panel);
+  }
+
+  .site-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.85rem;
+  }
+
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.15;
+    max-width: 15rem;
+  }
+
+  .site-header__toggle,
+  .site-nav__close {
+    background: none;
+    border: 0;
+    padding: 0.4rem;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.4rem;
+  }
+
+  .site-nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-block: 0.2rem;
+    border-bottom: 2px solid transparent;
+  }
+  .site-nav a:hover {
+    border-bottom-color: var(--color-accent);
+  }
+  .site-nav a[aria-current='page'] {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .site-nav__close {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    .site-nav {
+      position: fixed;
+      inset: 0;
+      background: var(--color-canvas);
+      color: var(--color-ink);
+      display: none;
+      flex-direction: column;
+      padding: 1rem clamp(1rem, 4vw, 2rem) 2rem;
+      z-index: 50;
+    }
+    .site-nav[data-open] {
+      display: flex;
+    }
+    .site-nav__close {
+      display: block;
+      align-self: flex-end;
+    }
+    .site-nav ul {
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 2rem;
+    }
+    .site-nav a {
+      font-size: 1.4rem;
+      font-family: var(--font-display);
+    }
+  }
+
+  @media (min-width: 861px) {
+    .site-header__toggle {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('nav-principal')
+  const openBtn = document.querySelector<HTMLButtonElement>('[data-nav-open]')
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-nav-close]')
+
+  const setOpen = (open: boolean) => {
+    if (!nav || !openBtn) return
+    nav.toggleAttribute('data-open', open)
+    openBtn.setAttribute('aria-expanded', String(open))
+    document.body.style.overflow = open ? 'hidden' : ''
+    if (open) closeBtn?.focus()
+    else openBtn.focus()
+  }
+
+  openBtn?.addEventListener('click', () => setOpen(true))
+  closeBtn?.addEventListener('click', () => setOpen(false))
+  nav?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).tagName === 'A') setOpen(false)
+  })
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav?.hasAttribute('data-open')) setOpen(false)
+  })
+</script>

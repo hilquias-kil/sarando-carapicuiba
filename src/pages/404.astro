@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro'
+---
+
+<Base
+  title="Página não encontrada | Associação Sarando Carapicuíba"
+  description="O endereço que você abriu não existe neste site."
+  noindex
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Essa página não existe</h1>
+      <p class="lead measure" style="margin-top:1rem">
+        O endereço que você abriu não está neste site. Pode ser que ele tenha mudado de lugar.
+      </p>
+      <ul class="atalhos">
+        <li><a class="inline" href="/">Início</a></li>
+        <li><a class="inline" href="/projetos">Projetos</a></li>
+        <li><a class="inline" href="/acoes">Ações</a></li>
+        <li><a class="inline" href="/doacoes">Doações</a></li>
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .atalhos {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+</style>

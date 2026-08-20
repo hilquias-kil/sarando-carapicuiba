@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  projeto: CollectionEntry<'projetos'>
+}
+const { projeto } = Astro.props
+const { titulo, capa, capaAlt, linha } = projeto.data
+---
+
+<article class="card projeto">
+  <a href={`/projetos/${projeto.id}`}>
+    <div class="card-media projeto__media">
+      <Image src={capa} alt={capaAlt} />
+      <div class="scrim-caption projeto__caption">
+        <h3>{titulo}</h3>
+      </div>
+    </div>
+    <p class="projeto__linha">{linha}</p>
+  </a>
+</article>
+
+<style>
+  .projeto a {
+    text-decoration: none;
+    display: block;
+  }
+  .projeto__media {
+    position: relative;
+    aspect-ratio: 3 / 4;
+  }
+  .projeto__caption {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 2.5rem 1rem 1rem;
+    color: #fff;
+  }
+  .projeto__caption h3 {
+    font-size: 1.35rem;
+  }
+  .projeto__linha {
+    margin-top: 0.7rem;
+    font-size: var(--text-small);
+    color: var(--color-ink-2);
+  }
+  .section--panel .projeto__linha {
+    color: var(--color-on-panel-2);
+  }
+</style>

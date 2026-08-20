@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro'
+import ProjetoCard from '../../components/ProjetoCard.astro'
+import ParticipationBlock from '../../components/ParticipationBlock.astro'
+import SectionRule from '../../components/SectionRule.astro'
+import { projetosPublicados } from '../../lib/collections'
+
+const projetos = await projetosPublicados()
+---
+
+<Base
+  title="Projetos | Associação Sarando Carapicuíba"
+  description="Quatro projetos gratuitos na sede da associação, em Carapicuíba: capacitação profissional, bateria, jiu-jítsu e socioeducativo."
+  ogDescription="Quatro projetos gratuitos, abertos a qualquer pessoa, na Av. Celeste, 94, em Carapicuíba."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Projetos</h1>
+      <p class="lead measure espaco-s">
+        Projeto é o que acontece toda semana na sede, na Av. Celeste, 94. São quatro, todos
+        gratuitos e todos abertos a qualquer pessoa. Se você procura uma data específica numa
+        comunidade, isso a gente chama de ação, e fica em outra página.
+      </p>
+      <SectionRule />
+      <div class="grade-projetos">
+        {projetos.map((projeto) => <ProjetoCard projeto={projeto} />)}
+      </div>
+    </div>
+  </section>
+
+  <ParticipationBlock />
+</Base>

@@ -1,0 +1,32 @@
+---
+import { cta, destino } from '../lib/site'
+---
+
+<section class="section section--canvas">
+  <div class="wrap">
+    <h2>Como participar</h2>
+    <div class="participa measure">
+      <p>As aulas acontecem na sede da associação, na Av. Celeste, 94, Centro, Carapicuíba.</p>
+      <p>É gratuito. Não tem mensalidade, não tem material pago e não tem limite de vagas.</p>
+      <p>É aberto a qualquer pessoa e não precisa de experiência.</p>
+      <p>
+        Não tem horário fixo publicado. Mande mensagem no WhatsApp e a gente diz quando é a
+        próxima aula.
+      </p>
+      <p class="participa__cta">
+        <a class="btn btn--primary" href={destino.whatsapp}>{cta.whatsapp}</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .participa {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.2rem;
+  }
+  .participa__cta {
+    margin-top: 0.6rem;
+  }
+</style>

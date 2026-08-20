@@ -1,0 +1,12 @@
+{
+  "name": "Associação Sarando Carapicuíba",
+  "short_name": "Sarando",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#FAF7F5",
+  "theme_color": "#FAF7F5",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/logo.webp", "sizes": "733x639", "type": "image/webp" }
+  ]
+}

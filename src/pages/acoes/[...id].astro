@@ -1,0 +1,105 @@
+---
+import { render } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from '../../layouts/Base.astro'
+import SectionRule from '../../components/SectionRule.astro'
+import { formatarData, destino } from '../../lib/site'
+import { acoesPublicadas } from '../../lib/collections'
+
+export async function getStaticPaths() {
+  const acoes = await acoesPublicadas()
+  return acoes.map((acao) => ({ params: { id: acao.id }, props: { acao } }))
+}
+
+const { acao } = Astro.props
+const { Content } = await render(acao)
+const { titulo, resumo, metaDescricao, capa, capaAlt, data, comunidade, galeria } = acao.data
+---
+
+<Base
+  title={`${titulo} | Associação Sarando Carapicuíba`}
+  description={metaDescricao ?? resumo}
+  ogDescription={resumo}
+  ogType="article"
+>
+  <article>
+    <section class="section section--canvas">
+      <div class="wrap">
+        <p class="dateline">
+          <time datetime={data.toISOString().slice(0, 10)}>{formatarData(data)}</time>
+          <span aria-hidden="true">·</span>
+          <span>{comunidade}</span>
+        </p>
+        <h1 style="margin-top:0.6rem">{titulo}</h1>
+        <SectionRule />
+        <Image src={capa} alt={capaAlt} width={1116} class="acao-capa" />
+        <div class="prose measure" style="margin-top:2rem"><Content /></div>
+      </div>
+    </section>
+
+    {
+      galeria && galeria.length > 0 && (
+        <section class="section section--panel">
+          <div class="wrap">
+            <p class="eyebrow">Fotos do dia</p>
+            <div class="galeria">
+              {galeria.map((item) => (
+                <figure>
+                  <Image
+                    src={item.imagem}
+                    alt={item.legenda ?? `Foto da ação em ${comunidade}`}
+                    width={360}
+                  />
+                  {item.legenda && <figcaption>{item.legenda}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="section section--canvas">
+      <div class="wrap">
+        <h2>A próxima ação pode ter o nome de uma empresa junto.</h2>
+        <p class="cta-linha">
+          <a class="inline" href={destino.empresas}>Como a sua empresa patrocina uma ação</a>
+          <a class="inline" href="/acoes">Ver todas as ações</a>
+        </p>
+      </div>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .acao-capa {
+    width: 100%;
+  }
+  .galeria {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+  @media (min-width: 700px) {
+    .galeria {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .galeria figure {
+    margin: 0;
+  }
+  .galeria figcaption {
+    margin-top: 0.5rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-small);
+    color: var(--color-on-panel-2);
+  }
+  .cta-linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.4rem;
+  }
+</style>

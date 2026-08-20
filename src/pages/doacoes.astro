@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro'
+import SectionRule from '../components/SectionRule.astro'
+import { conta, cta, destino } from '../lib/site'
+---
+
+<Base
+  title="Doações | Associação Sarando Carapicuíba"
+  description="Como doar para a Associação Sarando Carapicuíba: chave PIX, dados bancários e o que a doação vira em Carapicuíba."
+  ogDescription="PIX no CNPJ da associação. O que entra vira cesta, roupa, material e transporte."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Doações</h1>
+      <div class="duas-colunas">
+        <div class="measure bloco">
+          <p class="lead">
+            Dá para doar por PIX ou por transferência. A chave PIX é o CNPJ da associação e a
+            conta está no nome dela.
+          </p>
+          <p>
+            O que entra vira cesta, roupa, material escolar, instrumento, tatame e transporte
+            para as ações. Não tem valor mínimo.
+          </p>
+          <p>
+            Depois de doar, se você quiser, manda o comprovante no WhatsApp. Assim a gente sabe
+            quem doou e consegue responder.
+          </p>
+          <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.whatsapp}</a></p>
+        </div>
+
+        <div class="facts">
+          <dl>
+            <div><dt>Chave PIX, o CNPJ</dt><dd>{conta.chavePix}</dd></div>
+            <div><dt>Titular</dt><dd>{conta.titular}</dd></div>
+            <div><dt>Instituição</dt><dd>{conta.instituicao}</dd></div>
+            <div><dt>Agência</dt><dd>{conta.agencia}</dd></div>
+            <div><dt>Conta</dt><dd>{conta.numero}</dd></div>
+          </dl>
+        </div>
+      </div>
+      <SectionRule />
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Doar coisa em vez de dinheiro</h2>
+      <div class="measure bloco">
+        <p>
+          Também dá para doar alimento não perecível, roupa em condição de uso, calçado,
+          material escolar e instrumento.
+        </p>
+        <p>Antes de separar, manda mensagem no WhatsApp para combinar a entrega.</p>
+        <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.whatsapp}</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* layout comes from the primitives in global.css */
+</style>

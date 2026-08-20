@@ -1,0 +1,28 @@
+---
+import { site } from '../lib/site'
+---
+
+<div class="facts">
+  <dl>
+    <div>
+      <dt>Razão social</dt>
+      <dd>{site.nome}</dd>
+    </div>
+    <div>
+      <dt>CNPJ</dt>
+      <dd>{site.cnpj}</dd>
+    </div>
+    <div>
+      <dt>Endereço</dt>
+      <dd>{site.endereco}</dd>
+    </div>
+    <div>
+      <dt>WhatsApp</dt>
+      <dd><a class="inline" href={site.whatsapp}>{site.telefoneDisplay}</a></dd>
+    </div>
+    <div>
+      <dt>E-mail</dt>
+      <dd><a class="inline" href={`mailto:${site.email}`}>{site.email}</a></dd>
+    </div>
+  </dl>
+</div>
