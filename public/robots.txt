@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sarandocarapicuiba.org/sitemap-index.xml

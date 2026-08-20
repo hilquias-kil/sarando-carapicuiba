@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro'
+import AcaoCard from '../../components/AcaoCard.astro'
+import SectionRule from '../../components/SectionRule.astro'
+import { acoesPublicadas } from '../../lib/collections'
+import { destino } from '../../lib/site'
+
+const acoes = await acoesPublicadas()
+
+/** Derived from the entries so the lead never outlives the list it describes. */
+const ateAgora = `Até agora, foi em ${new Intl.ListFormat('pt-BR', {
+  type: 'conjunction',
+}).format([...new Set(acoes.map((acao) => acao.data.comunidade))])}.`
+---
+
+<Base
+  title="Ações | Associação Sarando Carapicuíba"
+  description="As ações da Associação Sarando Carapicuíba nas comunidades de Carapicuíba, com data, lugar e fotos do dia."
+  ogDescription="Cada ação com data, comunidade e foto. Murão e Porto de Areia."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Ações</h1>
+      <p class="lead measure espaco-s">
+        A associação escolhe uma comunidade de Carapicuíba, combina o que falta ali e leva num
+        dia marcado: cesta de alimento, roupa, calçado, brinquedo. {ateAgora}
+      </p>
+      <SectionRule />
+      <div class="lista-acoes">
+        {acoes.map((acao) => <AcaoCard acao={acao} lista nivel={2} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <h2>A próxima ação pode ter o nome de uma empresa junto.</h2>
+      <p style="margin-top:1.2rem">
+        <a class="btn btn--primary" href={destino.empresas}>Para empresas</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* The design system puts ações two-up on a dark panel and as a list on
+     canvas. This page is canvas, so it is a list. */
+  .lista-acoes {
+    display: grid;
+    gap: 2.5rem;
+  }
+  .lista-acoes > * + * {
+    border-top: 1px solid var(--color-rule);
+    padding-top: 2.5rem;
+  }
+</style>

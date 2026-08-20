@@ -1,0 +1,111 @@
+---
+import { site } from '../lib/site'
+---
+
+<div class="consent" id="consent-bar" hidden>
+  <div class="wrap consent__inner">
+    <p>
+      Este site usa o Google Analytics para contar visitas. Nada é carregado antes de você
+      escolher. <a href="/politica-de-privacidade" class="inline">Política de privacidade</a>
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="btn btn--primary" data-consent="granted">Aceitar</button>
+      <button type="button" class="btn btn--ghost" data-consent="denied">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .consent {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 60;
+    background: var(--color-canvas);
+    border-top: 1px solid var(--color-rule);
+  }
+  .consent__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.9rem;
+  }
+  .consent p {
+    font-size: var(--text-small);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .consent__actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+</style>
+
+<script is:inline define:vars={{ ga4: site.ga4 }}>
+  ;(function () {
+    var KEY = 'sc-consent'
+    var ANO = 365 * 24 * 60 * 60 * 1000
+    var bar = document.getElementById('consent-bar')
+
+    function ler() {
+      try {
+        var raw = localStorage.getItem(KEY)
+        if (!raw) return null
+        var v = JSON.parse(raw)
+        if (!v || typeof v.em !== 'number' || Date.now() - v.em > ANO) return null
+        return v.escolha
+      } catch (e) {
+        return null
+      }
+    }
+
+    // The privacy page states that gtag is not on the page before the click,
+    // so this must inject it rather than load-and-deny.
+    function carregarGA() {
+      if (document.getElementById('ga4-script')) return
+      var s = document.createElement('script')
+      s.id = 'ga4-script'
+      s.async = true
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4
+      document.head.appendChild(s)
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      window.gtag = gtag
+      gtag('js', new Date())
+      gtag('config', ga4)
+    }
+
+    // The bar is fixed over the page, so the page has to give back the height
+    // it covers. Without this the last thing on a page — and any control the
+    // keyboard tabs to down there — sits underneath it.
+    function reservarEspaco() {
+      var altura = bar && !bar.hidden ? bar.offsetHeight : 0
+      document.documentElement.style.setProperty('--consent-h', altura + 'px')
+    }
+
+    var escolha = ler()
+    if (escolha === 'granted') carregarGA()
+    else if (escolha !== 'denied' && bar) {
+      bar.hidden = false
+      reservarEspaco()
+      addEventListener('resize', reservarEspaco)
+    }
+
+    document.querySelectorAll('[data-consent]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var valor = btn.getAttribute('data-consent')
+        try {
+          localStorage.setItem(KEY, JSON.stringify({ escolha: valor, em: Date.now() }))
+        } catch (e) {}
+        if (bar) bar.hidden = true
+        reservarEspaco()
+        removeEventListener('resize', reservarEspaco)
+        if (valor === 'granted') carregarGA()
+      })
+    })
+  })()
+</script>

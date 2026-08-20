@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+import { dataCurta, cta } from '../lib/site'
+
+interface Props {
+  acao: CollectionEntry<'acoes'>
+  /** Thumbnail beside the text, for the canvas list on /acoes. */
+  lista?: boolean
+  /** 2 where the list follows the h1 directly, 3 where a section h2 introduces it. */
+  nivel?: 2 | 3
+}
+const { acao, lista = false, nivel = 3 } = Astro.props
+const Titulo = `h${nivel}` as 'h2' | 'h3'
+const { titulo, capa, capaAlt, data, comunidade, resumo } = acao.data
+---
+
+<article class:list={['card', 'acao', lista && 'acao--lista']}>
+  <a href={`/acoes/${acao.id}`}>
+    <div class="card-media acao__media">
+      <Image src={capa} alt={capaAlt} width={lista ? 420 : 540} />
+    </div>
+    <p class="dateline acao__meta">
+      <time datetime={data.toISOString().slice(0, 10)}>{dataCurta(data)}</time>
+      <span aria-hidden="true">·</span>
+      <span>{comunidade}</span>
+    </p>
+    <Titulo class="acao__titulo">{titulo}</Titulo>
+    <p class="acao__resumo">{resumo}</p>
+    <span class="acao__cta">{cta.verAcao}</span>
+  </a>
+</article>
+
+<style>
+  .acao a {
+    text-decoration: none;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .acao__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  @media (min-width: 720px) {
+    .acao--lista a {
+      grid-template-columns: 320px 1fr;
+      column-gap: 2rem;
+      align-items: start;
+    }
+    .acao--lista .acao__media {
+      grid-row: 1 / span 4;
+    }
+    .acao--lista .acao__meta {
+      margin-top: 0;
+    }
+  }
+  .acao__meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  .acao__resumo {
+    color: inherit;
+    opacity: 0.85;
+  }
+  /* Same size whether the heading renders as h2 or h3. */
+  .acao__titulo {
+    font-size: var(--text-h3);
+    letter-spacing: normal;
+  }
+
+  .acao__cta {
+    font-weight: 600;
+    font-size: var(--text-ui);
+    border-bottom: 2px solid var(--color-accent);
+    justify-self: start;
+    padding-bottom: 2px;
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets'
+import Base from '../layouts/Base.astro'
+import SectionRule from '../components/SectionRule.astro'
+import voluntarios from '../assets/voluntarios.webp'
+import { cta, destino } from '../lib/site'
+---
+
+<Base
+  title="Ser voluntário | Associação Sarando Carapicuíba"
+  description="Como ser voluntário na Associação Sarando Carapicuíba: fale com a gente no WhatsApp. Sem formulário e sem exigência de experiência."
+  ogDescription="A associação funciona com voluntário. Manda mensagem no WhatsApp."
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h1>Ser voluntário</h1>
+      <div class="duas-colunas" style="--aside:380px">
+        <div class="measure bloco">
+          <p class="lead">
+            A associação funciona com voluntário. Quem monta cesta, carrega, organiza a entrega,
+            dá aula e registra o dia é voluntário.
+          </p>
+          <p>
+            Não precisa de formação, de experiência nem de muito tempo livre. Precisa aparecer
+            no dia combinado.
+          </p>
+        </div>
+        <Image
+          src={voluntarios}
+          alt="Voluntários da associação numa entrega"
+          width={380}
+          quality={65}
+        />
+      </div>
+      <SectionRule />
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <h2>Onde entra gente</h2>
+      <div class="tres-colunas onde">
+        <div>
+          <h3>Na ação</h3>
+          <p class="secondary">
+            Separar, montar, carregar, entregar, organizar a fila. É o dia mais pesado e o mais
+            fácil de participar sem compromisso longo.
+          </p>
+        </div>
+        <div>
+          <h3>No projeto</h3>
+          <p class="secondary">
+            Dar aula ou ajudar quem dá, toda semana na sede. Serve quem sabe um ofício, um
+            instrumento ou uma luta.
+          </p>
+        </div>
+        <div>
+          <h3>Fora do dia</h3>
+          <p class="secondary">
+            Motorista, cozinha, foto, redes sociais, planilha. Uma parte do trabalho não
+            acontece na frente de ninguém.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <h2>Como começar</h2>
+      <div class="measure bloco">
+        <p>
+          Manda mensagem no WhatsApp dizendo que você quer ser voluntário e o que você sabe
+          fazer. Não tem formulário, não tem cadastro e não tem entrevista.
+        </p>
+        <p>A gente responde combinando a próxima ação ou o projeto onde falta gente.</p>
+        <p><a class="btn btn--primary" href={destino.whatsapp}>{cta.whatsapp}</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .onde h3 {
+    margin-bottom: 0.5rem;
+  }
+</style>

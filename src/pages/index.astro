@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro'
+import PhotoHero from '../components/PhotoHero.astro'
+import ProjetoCard from '../components/ProjetoCard.astro'
+import AcaoCard from '../components/AcaoCard.astro'
+import SectionRule from '../components/SectionRule.astro'
+import hero from '../assets/hero-reserva.webp'
+import { cta, destino } from '../lib/site'
+import { projetosPublicados, acoesPublicadas } from '../lib/collections'
+
+const projetos = await projetosPublicados()
+const acoes = await acoesPublicadas(2)
+---
+
+<Base
+  title="Associação Sarando Carapicuíba"
+  description="Associação sem fins lucrativos em Carapicuíba. Quatro projetos gratuitos na sede, na Av. Celeste, 94, e ações levadas às comunidades da cidade."
+  ogDescription="Quatro projetos gratuitos na sede e ações com data e foto nas comunidades de Carapicuíba."
+  invertedHeader
+>
+  <PhotoHero
+    foto={hero}
+    alt="Voluntários da associação numa ação em uma comunidade de Carapicuíba"
+    altura="cheia"
+    prioritaria
+    cabecalhoInvertido
+  >
+    <h1>Aula de graça na sede. Cesta entregue na comunidade.</h1>
+    <p class="hero__apoio">
+      A Associação Sarando Carapicuíba fica na Av. Celeste, 94, no Centro de Carapicuíba. São
+      quatro projetos abertos toda semana na sede, e ações levadas a comunidades da cidade como
+      o Murão e o Porto de Areia.
+    </p>
+    <p class="hero__ctas">
+      <a class="btn btn--primary" href={destino.doar}>{cta.doar}</a>
+      <a class="btn btn--onphoto" href={destino.voluntario}>{cta.voluntario}</a>
+    </p>
+  </PhotoHero>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <p class="eyebrow">O que a gente faz</p>
+      <h2>Projeto e ação são duas coisas diferentes.</h2>
+      <div class="explica measure">
+        <p>
+          <strong>Projeto</strong> é o que acontece toda semana na sede. Capacitação profissional,
+          bateria, jiu-jítsu e socioeducativo. É gratuito, não tem seleção e não tem limite de vagas.
+        </p>
+        <p>
+          <strong>Ação</strong> é uma data. A gente escolhe uma comunidade de Carapicuíba, combina
+          o que falta ali e leva. Foi assim no Porto de Areia, com alimento, roupa e ovo de Páscoa,
+          e no Murão, em 14 de janeiro de 2024, com cesta para mais de 40 famílias e roupa e brinquedo
+          para 40 crianças.
+        </p>
+        <p>
+          Ninguém aqui é pago. A associação funciona inteira com voluntário, e o que entra em
+          doação vira cesta, roupa, material escolar, instrumento, tatame e transporte.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <p class="eyebrow">Projetos</p>
+      <h2>Toda semana, na sede, de graça.</h2>
+      <SectionRule />
+      <div class="grade-projetos">
+        {projetos.map((projeto) => <ProjetoCard projeto={projeto} />)}
+      </div>
+      <p class="espaco-l">
+        <a class="inline" href="/projetos">Ver todos os projetos</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <p class="eyebrow">Ações</p>
+      <h2>O que a associação já fez, ação por ação.</h2>
+      <p class="secondary measure espaco-s">Cada uma com data, comunidade e as fotos do dia.</p>
+      <div class="duas-acoes">
+        {acoes.map((acao) => <AcaoCard acao={acao} />)}
+      </div>
+      <p class="espaco-l">
+        <a class="inline" href="/acoes">Ver todas as ações</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--canvas">
+    <div class="wrap">
+      <div class="tres-colunas tres-ctas">
+        <div>
+          <h3>A sua empresa pode bancar uma ação inteira.</h3>
+          <p class="secondary">
+            Uma ação tem data, comunidade, lista do que vai ser levado e foto depois. É a doação
+            mais fácil de mostrar para o seu conselho.
+          </p>
+          <a class="btn btn--ghost" href={destino.empresas}>Para empresas</a>
+        </div>
+        <div>
+          <h3>PIX, e o dinheiro vira o que falta na ação.</h3>
+          <p class="secondary">
+            A chave PIX é o CNPJ da associação e a conta está no nome dela. Não tem valor
+            mínimo.
+          </p>
+          <a class="btn btn--primary" href={destino.doar}>{cta.doar}</a>
+        </div>
+        <div>
+          <h3>A associação funciona com voluntário.</h3>
+          <p class="secondary">
+            Precisa de gente para montar cesta, carregar, organizar, dar aula e registrar o dia.
+          </p>
+          <a class="btn btn--ghost" href={destino.voluntario}>{cta.voluntario}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .explica {
+    display: grid;
+    gap: 1.1rem;
+    margin-top: 1.2rem;
+  }
+
+  .duas-acoes {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+  @media (min-width: 800px) {
+    .duas-acoes {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .tres-ctas > div {
+    display: grid;
+    gap: 0.8rem;
+    align-content: start;
+  }
+  .tres-ctas .btn {
+    justify-self: start;
+  }
+</style>

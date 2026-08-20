@@ -1,0 +1,44 @@
+---
+import { render } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from '../../layouts/Base.astro'
+import ParticipationBlock from '../../components/ParticipationBlock.astro'
+import SectionRule from '../../components/SectionRule.astro'
+import { projetosPublicados } from '../../lib/collections'
+
+export async function getStaticPaths() {
+  const projetos = await projetosPublicados()
+  return projetos.map((projeto) => ({ params: { id: projeto.id }, props: { projeto } }))
+}
+
+const { projeto } = Astro.props
+const { Content } = await render(projeto)
+const { titulo, resumo, apoio, metaDescricao, capa, capaAlt } = projeto.data
+---
+
+<Base
+  title={`${titulo} | Associação Sarando Carapicuíba`}
+  description={metaDescricao ?? resumo}
+  ogDescription={resumo}
+>
+  <section class="section section--canvas">
+    <div class="wrap">
+      <p class="eyebrow">Projeto</p>
+      <h1>{titulo}</h1>
+      <p class="lead measure espaco-s">{apoio}</p>
+      <SectionRule />
+      <div class="duas-colunas" style="--aside:380px">
+        <div class="prose measure"><Content /></div>
+        <Image src={capa} alt={capaAlt} width={380} class="projeto-foto" />
+      </div>
+    </div>
+  </section>
+
+  <ParticipationBlock />
+</Base>
+
+<style>
+  .projeto-foto {
+    width: 100%;
+  }
+</style>

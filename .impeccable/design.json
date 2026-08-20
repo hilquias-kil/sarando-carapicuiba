@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T13:18:13.900996Z",
+  "title": "Design System: Associação Sarando Carapicuíba",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Warm Paper Ivory",
+        "canonical": "#FAF7F5",
+        "purpose": "The default page ground and reading surface.",
+        "tonalRamp": [
+          "oklch(15% 0.004 56.4)",
+          "oklch(25% 0.004 56.4)",
+          "oklch(40% 0.004 56.4)",
+          "oklch(55% 0.004 56.4)",
+          "oklch(70% 0.004 56.4)",
+          "oklch(80% 0.004 56.4)",
+          "oklch(90% 0.004 56.4)",
+          "oklch(95% 0.004 56.4)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Pure Surface",
+        "canonical": "#FFFFFF",
+        "purpose": "The facts card only: lifts off the ivory by being whiter than it.",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(25% 0 89.9)",
+          "oklch(40% 0 89.9)",
+          "oklch(55% 0 89.9)",
+          "oklch(70% 0 89.9)",
+          "oklch(80% 0 89.9)",
+          "oklch(90% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Roasted Near-Black",
+        "canonical": "#141110",
+        "purpose": "Photograph panels, hero fallback ground, and the base of every scrim.",
+        "tonalRamp": [
+          "oklch(15% 0.005 39.3)",
+          "oklch(25% 0.005 39.3)",
+          "oklch(40% 0.005 39.3)",
+          "oklch(55% 0.005 39.3)",
+          "oklch(70% 0.005 39.3)",
+          "oklch(80% 0.005 39.3)",
+          "oklch(90% 0.005 39.3)",
+          "oklch(95% 0.005 39.3)"
+        ]
+      },
+      "panel-deep": {
+        "role": "neutral",
+        "displayName": "Coffee Panel",
+        "canonical": "#241C1A",
+        "purpose": "The footer, and only the footer.",
+        "tonalRamp": [
+          "oklch(15% 0.013 34.4)",
+          "oklch(25% 0.013 34.4)",
+          "oklch(40% 0.013 34.4)",
+          "oklch(55% 0.013 34.4)",
+          "oklch(70% 0.013 34.4)",
+          "oklch(80% 0.013 34.4)",
+          "oklch(90% 0.013 34.4)",
+          "oklch(95% 0.013 34.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Full Ink",
+        "canonical": "#1A1413",
+        "purpose": "Body text on canvas. 17.07:1.",
+        "tonalRamp": [
+          "oklch(15% 0.01 29.1)",
+          "oklch(25% 0.01 29.1)",
+          "oklch(40% 0.01 29.1)",
+          "oklch(55% 0.01 29.1)",
+          "oklch(70% 0.01 29.1)",
+          "oklch(80% 0.01 29.1)",
+          "oklch(90% 0.01 29.1)",
+          "oklch(95% 0.01 29.1)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#5A4E4B",
+        "purpose": "Lead and secondary prose on canvas. 7.50:1.",
+        "tonalRamp": [
+          "oklch(15% 0.017 34.3)",
+          "oklch(25% 0.017 34.3)",
+          "oklch(40% 0.017 34.3)",
+          "oklch(55% 0.017 34.3)",
+          "oklch(70% 0.017 34.3)",
+          "oklch(80% 0.017 34.3)",
+          "oklch(90% 0.017 34.3)",
+          "oklch(95% 0.017 34.3)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "#766862",
+        "purpose": "Eyebrows, datelines, definition terms. 5.01:1. The quietest text allowed.",
+        "tonalRamp": [
+          "oklch(15% 0.02 44.6)",
+          "oklch(25% 0.02 44.6)",
+          "oklch(40% 0.02 44.6)",
+          "oklch(55% 0.02 44.6)",
+          "oklch(70% 0.02 44.6)",
+          "oklch(80% 0.02 44.6)",
+          "oklch(90% 0.02 44.6)",
+          "oklch(95% 0.02 44.6)"
+        ]
+      },
+      "on-panel": {
+        "role": "neutral",
+        "displayName": "Panel White",
+        "canonical": "#FFFFFF",
+        "purpose": "Text on panels and photographs. 18.79:1.",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(25% 0 89.9)",
+          "oklch(40% 0 89.9)",
+          "oklch(55% 0 89.9)",
+          "oklch(70% 0 89.9)",
+          "oklch(80% 0 89.9)",
+          "oklch(90% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "on-panel-2": {
+        "role": "neutral",
+        "displayName": "Panel Grey",
+        "canonical": "#A79C98",
+        "purpose": "Secondary text and figure captions on panels. 7.03:1.",
+        "tonalRamp": [
+          "oklch(15% 0.014 41.2)",
+          "oklch(25% 0.014 41.2)",
+          "oklch(40% 0.014 41.2)",
+          "oklch(55% 0.014 41.2)",
+          "oklch(70% 0.014 41.2)",
+          "oklch(80% 0.014 41.2)",
+          "oklch(90% 0.014 41.2)",
+          "oklch(95% 0.014 41.2)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "#E5262C",
+        "purpose": "Fills, large display type, non-text marks. Never body-size text.",
+        "tonalRamp": [
+          "oklch(15% 0.222 26.3)",
+          "oklch(25% 0.222 26.3)",
+          "oklch(40% 0.222 26.3)",
+          "oklch(55% 0.222 26.3)",
+          "oklch(70% 0.222 26.3)",
+          "oklch(80% 0.222 26.3)",
+          "oklch(90% 0.222 26.3)",
+          "oklch(95% 0.222 26.3)"
+        ]
+      },
+      "accent-deep": {
+        "role": "primary",
+        "displayName": "Deep Signal Red",
+        "canonical": "#B01B22",
+        "purpose": "All accent text at body size on canvas. 6.51:1. Primary button hover.",
+        "tonalRamp": [
+          "oklch(15% 0.182 25.6)",
+          "oklch(25% 0.182 25.6)",
+          "oklch(40% 0.182 25.6)",
+          "oklch(55% 0.182 25.6)",
+          "oklch(70% 0.182 25.6)",
+          "oklch(80% 0.182 25.6)",
+          "oklch(90% 0.182 25.6)",
+          "oklch(95% 0.182 25.6)"
+        ]
+      },
+      "accent-lift": {
+        "role": "primary",
+        "displayName": "Lifted Red",
+        "canonical": "#F2565A",
+        "purpose": "Accent text on dark panels. 5.60:1.",
+        "tonalRamp": [
+          "oklch(15% 0.192 22.6)",
+          "oklch(25% 0.192 22.6)",
+          "oklch(40% 0.192 22.6)",
+          "oklch(55% 0.192 22.6)",
+          "oklch(70% 0.192 22.6)",
+          "oklch(80% 0.192 22.6)",
+          "oklch(90% 0.192 22.6)",
+          "oklch(95% 0.192 22.6)"
+        ]
+      },
+      "accent-tint": {
+        "role": "primary",
+        "displayName": "Red Wash",
+        "canonical": "#FBE4E4",
+        "purpose": "Large low-contrast fills. Non-text only.",
+        "tonalRamp": [
+          "oklch(15% 0.025 17.6)",
+          "oklch(25% 0.025 17.6)",
+          "oklch(40% 0.025 17.6)",
+          "oklch(55% 0.025 17.6)",
+          "oklch(70% 0.025 17.6)",
+          "oklch(80% 0.025 17.6)",
+          "oklch(90% 0.025 17.6)",
+          "oklch(95% 0.025 17.6)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#E4DCD8",
+        "purpose": "Every 1px border on canvas.",
+        "tonalRamp": [
+          "oklch(15% 0.01 48.6)",
+          "oklch(25% 0.01 48.6)",
+          "oklch(40% 0.01 48.6)",
+          "oklch(55% 0.01 48.6)",
+          "oklch(70% 0.01 48.6)",
+          "oklch(80% 0.01 48.6)",
+          "oklch(90% 0.01 48.6)",
+          "oklch(95% 0.01 48.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single h1 per page. Capped at 18ch in the hero so it breaks into deliberate lines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2, written as a complete sentence with a full stop."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and sub-section h3. 1.35rem inside a projeto caption over a photograph."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Opening paragraph of a page or section. Muted Ink on canvas, Panel Grey on panel."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running prose, capped at 65ch by .measure."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Card sub-lines, legal lines, consent bar. Italic Lora for photo figcaptions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, datelines, facts-card terms. Uppercase, 0.14em tracked; datelines add tabular-nums."
+      },
+      "titulo": {
+        "displayName": "Título",
+        "purpose": "The step above h3: card titles sitting on a photograph, and the mobile nav overlay."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Controls rather than prose: buttons, nav items, the brand line, a card's CTA word."
+      }
+    },
+    "scrims": [
+      {
+        "name": "scrim-topo",
+        "value": "linear-gradient(180deg, rgba(20,17,16,0.8) 0, rgba(20,17,16,0.7) 96px, rgba(20,17,16,0) 260px)",
+        "purpose": "The band under the inverted header, holding 0.70 across the nav's own 70px box. Home only."
+      },
+      {
+        "name": "scrim-texto",
+        "value": "linear-gradient(180deg, rgba(20,17,16,0) 0, rgba(20,17,16,0.74) 5rem, rgba(20,17,16,0.9) 100%)",
+        "purpose": "The band under hero copy. Anchored to the copy, not the hero: it begins 5rem above the text block and is at 0.74 where the text begins, so the floor holds at any hero height. Measured 0.75-0.87 behind every hero string at 390/1024/1440."
+      },
+      {
+        "name": "scrim-caption",
+        "value": "linear-gradient(180deg, rgba(20,17,16,0) 0%, rgba(20,17,16,0.72) 45%, rgba(20,17,16,0.9) 100%)",
+        "purpose": "Projeto card caption. The 45% stop sits where the glyph tops land, not where the box starts."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "The only easing curve in the system."
+      },
+      {
+        "name": "card-image",
+        "value": "400ms",
+        "purpose": "Projeto/ação card image scale(1.03) on hover. The crop moves, the frame does not."
+      },
+      {
+        "name": "button-state",
+        "value": "160ms",
+        "purpose": "Button background and border colour transitions."
+      },
+      {
+        "name": "link-underline",
+        "value": "120ms",
+        "purpose": "Inline link text-underline-offset shift, 2px to 3px."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mosaico-2up",
+        "value": "620px"
+      },
+      {
+        "name": "galeria-3up",
+        "value": "700px"
+      },
+      {
+        "name": "acao-lista",
+        "value": "720px"
+      },
+      {
+        "name": "tres-colunas",
+        "value": "800px"
+      },
+      {
+        "name": "nav-desktop",
+        "value": "861px"
+      },
+      {
+        "name": "aside",
+        "value": "900px"
+      }
+    ],
+    "aspectRatios": [
+      {
+        "name": "projeto-card",
+        "value": "3 / 4",
+        "purpose": "Portrait crop for the projeto grid."
+      },
+      {
+        "name": "acao-card",
+        "value": "16 / 10",
+        "purpose": "Ação card photograph."
+      },
+      {
+        "name": "retrato",
+        "value": "1 / 1",
+        "purpose": "Board portraits, capped at 200px."
+      },
+      {
+        "name": "hero",
+        "value": "min(88vh, 780px)",
+        "purpose": "Hero minimum height, not a ratio."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The donate / WhatsApp button. The only saturated fill on a page.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Doar</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.1rem; border-radius: var(--radius-sm, 2px); font-family: var(--font-body, system-ui); font-weight: 600; font-size: var(--text-ui, 0.95rem); line-height: 1; text-decoration: none; border: 1px solid transparent; transition: background-color 160ms var(--ease-out, cubic-bezier(0.22,0.61,0.36,1)), border-color 160ms var(--ease-out, cubic-bezier(0.22,0.61,0.36,1)); } .ds-btn-primary { background: var(--color-accent, #E5262C); color: #fff; } .ds-btn-primary:hover { background: var(--color-accent-deep, #B01B22); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-accent-deep, #B01B22); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on canvas. Flips to a white hairline automatically inside a dark panel.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">Ser voluntário</a>",
+      "css": ".ds-btn-ghost { background: transparent; border-color: var(--color-rule, #E4DCD8); color: var(--color-ink, #1A1413); } .ds-btn-ghost:hover { border-color: var(--color-ink-3, #766862); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-accent-deep, #B01B22); outline-offset: 3px; }"
+    },
+    {
+      "name": "On-Photo Button",
+      "kind": "button",
+      "refersTo": "button-onphoto",
+      "description": "Glass button for the hero, where a second solid fill would compete with the primary red beside it.",
+      "html": "<div style=\"background:#141110;padding:1.25rem;\"><a class=\"ds-btn ds-btn-onphoto\" href=\"#\">Ser voluntário</a></div>",
+      "css": ".ds-btn-onphoto { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.55); color: #fff; } .ds-btn-onphoto:hover { background: rgba(255,255,255,0.22); } .ds-btn-onphoto:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Facts Card",
+      "kind": "card",
+      "refersTo": "facts-card",
+      "description": "The institutional block: CNPJ, endereço and contato on /quem-somos and /empresas, PIX and bank details on /doacoes. The system’s only raised surface, raised without a shadow.",
+      "html": "<div class=\"ds-facts\"><dl><div><dt>CNPJ</dt><dd>05.392.117/0001-81</dd></div><div><dt>Endereço</dt><dd>Av. Celeste, 94, Centro, Carapicuíba, SP</dd></div><div><dt>WhatsApp</dt><dd><a class=\"ds-inline\" href=\"#\">11 98195-0343</a></dd></div></dl></div>",
+      "css": ".ds-facts { background: var(--color-surface, #fff); border: 1px solid var(--color-rule, #E4DCD8); border-radius: var(--radius-sm, 2px); padding: 1.25rem 1.4rem; color: var(--color-ink, #1A1413); font-family: var(--font-body, system-ui); font-size: 1.0625rem; line-height: 1.7; max-width: 340px; } .ds-facts dl { margin: 0; display: grid; gap: 0.6rem; } .ds-facts div { display: grid; gap: 0.1rem; } .ds-facts dt { font-size: 0.70rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--color-ink-3, #766862); } .ds-facts dd { margin: 0; font-variant-numeric: tabular-nums; } .ds-inline { color: var(--color-accent-deep, #B01B22); text-decoration: underline; text-underline-offset: 2px; transition: text-underline-offset 120ms var(--ease-out, cubic-bezier(0.22,0.61,0.36,1)); } .ds-inline:hover { text-underline-offset: 3px; }"
+    },
+    {
+      "name": "Projeto Card",
+      "kind": "card",
+      "refersTo": "card-projeto",
+      "description": "Portrait 3:4 photograph with a scrim caption. Four across on desktop, two on mobile, never one.",
+      "html": "<article class=\"ds-projeto\"><a href=\"#\"><div class=\"ds-projeto-media\"><img src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22%3E%3Crect width=%22300%22 height=%22400%22 fill=%22%235A4E4B%22/%3E%3C/svg%3E\" alt=\"\"><div class=\"ds-projeto-caption\"><h3>Aulas de bateria</h3></div></div><p class=\"ds-projeto-linha\">Toda semana na sede, de graça.</p></a></article>",
+      "css": ".ds-projeto { max-width: 260px; font-family: var(--font-body, system-ui); } .ds-projeto a { text-decoration: none; display: block; color: inherit; } .ds-projeto-media { position: relative; aspect-ratio: 3 / 4; overflow: hidden; } .ds-projeto-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 400ms var(--ease-out, cubic-bezier(0.22,0.61,0.36,1)); } .ds-projeto:hover .ds-projeto-media img { transform: scale(1.03); } .ds-projeto-caption { position: absolute; inset-inline: 0; bottom: 0; padding: 2.5rem 1rem 1rem; color: #fff; background: linear-gradient(180deg, rgba(20,17,16,0) 0%, rgba(20,17,16,0.72) 45%, rgba(20,17,16,0.9) 100%); } .ds-projeto-caption h3 { margin: 0; font-family: var(--font-display, Georgia, serif); font-weight: 600; font-size: var(--text-titulo, 1.35rem); line-height: 1.15; } .ds-projeto-linha { margin: 0.7rem 0 0; font-size: 0.875rem; color: var(--color-ink-2, #5A4E4B); }"
+    },
+    {
+      "name": "Ação Card",
+      "kind": "card",
+      "refersTo": "card-acao",
+      "description": "16:10 photograph, tabular dateline, título, 240-character resumo, and a CTA underlined in Signal Red.",
+      "html": "<article class=\"ds-acao\"><a href=\"#\"><div class=\"ds-acao-media\"><img src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 200%22%3E%3Crect width=%22320%22 height=%22200%22 fill=%22%235A4E4B%22/%3E%3C/svg%3E\" alt=\"\"></div><p class=\"ds-dateline\"><time datetime=\"2024-01-14\">14/01/2024</time><span aria-hidden=\"true\">·</span><span>Murão</span></p><h3>Primeira ação na comunidade do Murão</h3><p class=\"ds-acao-resumo\">Cesta para mais de 40 famílias, roupa e brinquedo para 40 crianças.</p><span class=\"ds-acao-cta\">Ver a ação</span></a></article>",
+      "css": ".ds-acao { max-width: 360px; font-family: var(--font-body, system-ui); color: var(--color-ink, #1A1413); } .ds-acao a { text-decoration: none; display: grid; gap: 0.5rem; color: inherit; } .ds-acao-media { aspect-ratio: 16 / 10; overflow: hidden; } .ds-acao-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 400ms var(--ease-out, cubic-bezier(0.22,0.61,0.36,1)); } .ds-acao:hover .ds-acao-media img { transform: scale(1.03); } .ds-dateline { display: flex; gap: 0.5rem; margin: 0.6rem 0 0; font-size: 0.70rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--color-ink-3, #766862); font-variant-numeric: tabular-nums; } .ds-acao h3 { margin: 0; font-family: var(--font-display, Georgia, serif); font-weight: 600; font-size: 1.25rem; line-height: 1.15; } .ds-acao-resumo { margin: 0; opacity: 0.85; font-size: 1.0625rem; line-height: 1.7; } .ds-acao-cta { font-weight: 600; font-size: var(--text-ui, 0.95rem); border-bottom: 2px solid var(--color-accent, #E5262C); justify-self: start; padding-bottom: 2px; }"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "refersTo": "nav-desktop",
+      "description": "Five items, 600 weight. Hover and current page both draw a 2px Signal Red underline; there is no other state treatment.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><ul><li><a href=\"#\" aria-current=\"page\">Quem somos</a></li><li><a href=\"#\">Projetos</a></li><li><a href=\"#\">Ações</a></li><li><a href=\"#\">Doações</a></li><li><a href=\"#\">Para empresas</a></li></ul></nav>",
+      "css": ".ds-nav { background: var(--color-canvas, #FAF7F5); border-bottom: 1px solid var(--color-rule, #E4DCD8); padding: 0.85rem 1rem; font-family: var(--font-body, system-ui); } .ds-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.4rem; flex-wrap: wrap; } .ds-nav a { color: var(--color-ink, #1A1413); text-decoration: none; font-size: var(--text-ui, 0.95rem); font-weight: 600; padding-block: 0.2rem; border-bottom: 2px solid transparent; } .ds-nav a:hover, .ds-nav a[aria-current=\"page\"] { border-bottom-color: var(--color-accent, #E5262C); } .ds-nav a:focus-visible { outline: 2px solid var(--color-accent-deep, #B01B22); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Rule (mosaic)",
+      "kind": "custom",
+      "refersTo": "rule-mosaic",
+      "description": "The one ornament in the system: four tiles from the mark, stepping in opacity. Marks a beat inside a section.",
+      "html": "<div class=\"ds-rule-mosaic\" aria-hidden=\"true\"><span></span><span></span><span></span><span></span></div>",
+      "css": ".ds-rule-mosaic { display: flex; gap: 4px; margin-block: 1.5rem; } .ds-rule-mosaic span { width: 10px; height: 10px; background: var(--color-accent, #E5262C); } .ds-rule-mosaic span:nth-child(1) { opacity: 0.25; } .ds-rule-mosaic span:nth-child(2) { opacity: 0.5; } .ds-rule-mosaic span:nth-child(3) { opacity: 0.75; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Campo",
+    "overview": "The site is built out of two grounds and nothing else. A warm ivory canvas (#FAF7F5) carries every word the association wants read; a near-black panel (#141110) carries every photograph it wants seen, edge to edge, uninterrupted. A page is a sequence of those two grounds, and the switch between them is the only structural drama the system owns. There is no third ground, no card floating over a texture, no decorated frame — the photograph is the decoration, and it is given the whole viewport width to be it.\n\nThe register is warm editorial with an institutional spine. Lora sets every heading with a real serif’s weight and a tight negative tracking; Source Sans 3 sets running prose at a generous 1.7 line-height and 65ch measure. Underneath that warmth the system is unusually strict about numbers: dates, CNPJ, agência and conta all render in tabular-nums, because they exist to be compared and copied, not admired. This is a small association with no metrics and no institutional documents, so the design’s job is to make the few checkable facts it does have — a date, a community, a photograph, a board member’s name — look exactly as reliable as they are.\n\nRestraint is enforced, not aspired to. One accent red, inherited from the mark, appearing as a fill or a 2px underline and never as body text. One ornament, the four-tile mosaic, taken from the logo’s grid. Zero shadows. Two rounded corners in the entire system, both 2px. Motion is a single 400ms image scale on card hover and a one-pixel underline shift on links, both removed under prefers-reduced-motion.",
+    "keyCharacteristics": [
+      "Two grounds, declared per section, never painted per page",
+      "Photography is full-bleed and uninterrupted; text sits on gradient scrims, never on flat colour overlays",
+      "One accent red with three contrast-checked variants for three contexts",
+      "Flat by construction — no box-shadow anywhere",
+      "Square corners except two 2px exceptions",
+      "Serif display against humanist sans body; tabular numerals for anything checkable",
+      "A single committed light world; no dark mode"
+    ],
+    "rules": [
+      {
+        "name": "The Accent-Is-Not-Text Rule",
+        "section": "colors",
+        "body": "Signal Red never sets text at body size. On canvas, accent-coloured body text is Deep Signal Red; on a panel it is Lifted Red. Full-saturation red is for fills, large display type, and non-text marks. This is measured, not stylistic: Signal Red is 4.24:1 on the canvas and fails."
+      },
+      {
+        "name": "The Scrim Floor Rule",
+        "section": "colors",
+        "body": "Wherever white text sits over a photograph, the scrim beneath it is at least 0.70 opacity of #141110. The floor is composited against a worst case of a pure-white photograph, which yields 7.03:1. Below 0.70 the design is betting on the photograph being dark, and nobody can guarantee that at publish time."
+      },
+      {
+        "name": "The Anchored Scrim Rule",
+        "section": "colors",
+        "body": "A scrim's stops are measured in pixels from the thing they protect, never in percentages of the box they sit in. A percentage stop only holds the floor at the one height it was drawn for: the same gradient measured 0.76 behind the home h1 and 0.30 behind the shorter /empresas one."
+      },
+      {
+        "name": "The Blue-Free Rule",
+        "section": "colors",
+        "body": "There is no blue, no cool grey, and no cool black in this palette. Every neutral carries a red-brown bias. A grey that reads cool against the ivory is a defect."
+      },
+      {
+        "name": "The Variable-Name Rule",
+        "section": "typography",
+        "body": "The families are \"Lora Variable\" and \"Source Sans 3 Variable\". @fontsource-variable registers those exact names, and writing \"Lora\" or \"Source Sans 3\" fails silently into Georgia and system-ui."
+      },
+      {
+        "name": "The Self-Hosted Rule",
+        "section": "typography",
+        "body": "Fonts are imported from the @fontsource-variable packages and served from this origin. No fonts.googleapis.com link enters this site: the privacy page promises that nothing third-party loads before the visitor chooses."
+      },
+      {
+        "name": "The Tabular Rule",
+        "section": "typography",
+        "body": "Anything a reader might compare, verify, or copy renders in font-variant-numeric: tabular-nums — dates, CNPJ, agência, conta, the phone number."
+      },
+      {
+        "name": "The Panel Rhythm Rule",
+        "section": "layout",
+        "body": "A section declares itself .section--canvas or .section--panel and inherits its ground colour, its matching ink tokens, and its vertical padding from the primitive. No page paints a section background of its own."
+      },
+      {
+        "name": "The One Gap Rule",
+        "section": "layout",
+        "body": "Two sections on the same ground are one field, so the space between them is one section gap and not the sum of two. Without it a page silently opens a 144px hole wherever two same-ground sections meet."
+      },
+      {
+        "name": "The One-Wrap Rule",
+        "section": "layout",
+        "body": "Content is never centred or width-limited by a page-local max-width. If a new band needs a container, it uses .wrap."
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "section": "elevation",
+        "body": "No box-shadow, no filter: drop-shadow, no simulated shadow via a gradient. A component that seems to need one needs either a different ground or a hairline instead."
+      },
+      {
+        "name": "The Square-Corner Rule",
+        "section": "shapes",
+        "body": "Nothing new gets a radius. If a component needs to feel softer, it is the wrong component. Pills, capsule buttons, and circular avatars are all outside this system."
+      },
+      {
+        "name": "The Two-Places Rule",
+        "section": "components",
+        "body": "The mosaic motif lives in exactly two places: the section rule and the diretoria grid. It never becomes an image-crop system, a background pattern, or a loading state."
+      },
+      {
+        "name": "The Quiet Motion Rule",
+        "section": "components",
+        "body": "The entire motion vocabulary is three lines: a 1.03 image scale on card hover (400ms), a button colour transition (160ms), and a 1px link underline offset shift (120ms). prefers-reduced-motion: reduce collapses all of it."
+      }
+    ],
+    "dos": [
+      "Do declare every new section .section--canvas or .section--panel and let the primitive supply ground, ink, and padding.",
+      "Do use accent-deep for accent text on canvas and accent-lift on panels; reserve accent for fills, large display type, and non-text marks.",
+      "Do put every white-on-photograph text block on a scrim of at least 0.70, and anchor the gradient's stops in pixels to the text, so the floor survives a change of hero height or copy length.",
+      "Do reach for .wrap, .bleed, .measure and the three .espaco-* steps before writing a new layout rule.",
+      "Do set dates, CNPJ, agência, conta, and phone numbers in tabular-nums.",
+      "Do write section headings as complete sentences with a full stop.",
+      "Do give every photograph a real alt written in PT-BR, and explicit width/height on the board portraits.",
+      "Do let the image move on hover (scale(1.03), 400ms) and leave the frame still."
+    ],
+    "donts": [
+      "Don’t add a dark mode. The ivory ground and the near-black panels are the design, not a light-mode expression of it.",
+      "Don’t add a box-shadow, anywhere, for any reason. Use a ground change or a 1px rule hairline.",
+      "Don’t introduce a second radius step. 2px on buttons and the facts card is the whole vocabulary; everything else is square.",
+      "Don’t set body-size text in accent — it measures 4.24:1 on the canvas and fails.",
+      "Don’t write \"Lora\" or \"Source Sans 3\" in a font stack. The registered names carry \" Variable\".",
+      "Don’t link a stylesheet or font from a third-party origin. Fonts are self-hosted, and the consent bar is the only thing permitted to inject an external script — after a click.",
+      "Don’t re-declare container widths, section padding, or grid definitions inside a page file.",
+      "Don’t add entrance animations, scroll reveals, or parallax. The motion budget is three transitions and it is full.",
+      "Don’t extend the mosaic motif past the section rule and the diretoria grid.",
+      "Don't write a raw font-size into a component. Every size in the system is a --text-* step; a literal is how two near-identical sizes end up doing one job."
+    ]
+  }
+}
