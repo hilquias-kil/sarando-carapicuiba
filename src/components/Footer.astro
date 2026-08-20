@@ -8,8 +8,8 @@ const ano = new Date().getFullYear()
   <div class="wrap">
     <h2 id="contato">Contato</h2>
     <p class="site-footer__note">
-      A associação não tem formulário. Quem responde é gente da diretoria, pelo WhatsApp ou pelo
-      e-mail.
+      Pode chamar para doar, ser voluntário ou tirar uma dúvida. Quem responde é alguém da
+      diretoria, no WhatsApp ou no e-mail.
     </p>
 
     <div class="site-footer__grid">
@@ -83,11 +83,15 @@ const ano = new Date().getFullYear()
     gap: 0.9rem;
     align-content: start;
   }
+  /* The padding is hit area, the negative margin gives the layout back: these
+     are the four links most likely to be tapped with a thumb. */
   .site-footer__line {
     display: flex;
     align-items: center;
     gap: 0.7rem;
     text-decoration: none;
+    padding-block: 0.4rem;
+    margin-block: -0.4rem;
   }
   .site-footer__line:hover span,
   .site-footer__line:hover address {

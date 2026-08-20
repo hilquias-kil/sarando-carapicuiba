@@ -7,8 +7,11 @@ interface Props {
   acao: CollectionEntry<'acoes'>
   /** Thumbnail beside the text, for the canvas list on /acoes. */
   lista?: boolean
+  /** 2 where the list follows the h1 directly, 3 where a section h2 introduces it. */
+  nivel?: 2 | 3
 }
-const { acao, lista = false } = Astro.props
+const { acao, lista = false, nivel = 3 } = Astro.props
+const Titulo = `h${nivel}` as 'h2' | 'h3'
 const { titulo, capa, capaAlt, data, comunidade, resumo } = acao.data
 ---
 
@@ -22,7 +25,7 @@ const { titulo, capa, capaAlt, data, comunidade, resumo } = acao.data
       <span aria-hidden="true">·</span>
       <span>{comunidade}</span>
     </p>
-    <h3>{titulo}</h3>
+    <Titulo class="acao__titulo">{titulo}</Titulo>
     <p class="acao__resumo">{resumo}</p>
     <span class="acao__cta">{cta.verAcao}</span>
   </a>
@@ -60,9 +63,15 @@ const { titulo, capa, capaAlt, data, comunidade, resumo } = acao.data
     color: inherit;
     opacity: 0.85;
   }
+  /* Same size whether the heading renders as h2 or h3. */
+  .acao__titulo {
+    font-size: var(--text-h3);
+    letter-spacing: normal;
+  }
+
   .acao__cta {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: var(--text-ui);
     border-bottom: 2px solid var(--color-accent);
     justify-self: start;
     padding-bottom: 2px;

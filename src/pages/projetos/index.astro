@@ -17,13 +17,13 @@ const projetos = await projetosPublicados()
     <div class="wrap">
       <h1>Projetos</h1>
       <p class="lead measure espaco-s">
-        Projeto é o que acontece toda semana na sede, na Av. Celeste, 94. São quatro, todos
-        gratuitos e todos abertos a qualquer pessoa. Se você procura uma data específica numa
-        comunidade, isso a gente chama de ação, e fica em outra página.
+        Toda semana, na sede, a associação abre quatro projetos gratuitos: capacitação
+        profissional para quem procura trabalho, aulas de bateria, treino de jiu-jítsu e um
+        encontro socioeducativo para crianças e adolescentes.
       </p>
       <SectionRule />
       <div class="grade-projetos">
-        {projetos.map((projeto) => <ProjetoCard projeto={projeto} />)}
+        {projetos.map((projeto) => <ProjetoCard projeto={projeto} nivel={2} />)}
       </div>
     </div>
   </section>

@@ -1,11 +1,51 @@
 [
-  { "id": "aline",     "nome": "Aline Mayara",       "cargo": "Presidente",          "ordem": 1, "foto": "/equipe/aline.webp" },
-  { "id": "joaquim",   "nome": "Joaquim Aparecido",  "cargo": "Vice-presidente",     "ordem": 2, "foto": "/equipe/joaquim.webp" },
-  { "id": "jucilene",  "nome": "Jucilene Ribeiro",   "cargo": "1ª secretária",       "ordem": 3, "foto": "/equipe/jucilene.webp" },
-  { "id": "henrique",  "nome": "Henrique Moura",     "cargo": "2º secretário",       "ordem": 4, "foto": "/equipe/henrique.webp" },
-  { "id": "larissa",   "nome": "Larissa de Oliveira","cargo": "1ª tesoureira",       "ordem": 5, "foto": "/equipe/larissa.webp" },
-  { "id": "adilas",    "nome": "Adilans de Deus",    "cargo": "2ª tesoureira",       "ordem": 6, "foto": "/equipe/adilas.webp" },
-  { "id": "douglas",   "nome": "Douglas da Silva",   "cargo": "Conselheiro fiscal",  "ordem": 7, "foto": "/equipe/douglas.webp" },
-  { "id": "wn",        "nome": "Wellington Soares",  "cargo": "Conselheiro fiscal",  "ordem": 8, "foto": "/equipe/wn.webp" },
-  { "id": "karen",     "nome": "Karen Vieira",       "cargo": "Conselheira fiscal",  "ordem": 9, "foto": "/equipe/karen.webp" }
+  {
+    "id": "aline",
+    "nome": "Aline Mayara",
+    "cargo": "Presidente",
+    "ordem": 1,
+    "foto": "/equipe/aline.webp"
+  },
+  {
+    "id": "joaquim",
+    "nome": "Joaquim Aparecido",
+    "cargo": "Vice-presidente",
+    "ordem": 2,
+    "foto": "/equipe/joaquim.webp"
+  },
+  {
+    "id": "jucilene",
+    "nome": "Jucilene Ribeiro",
+    "cargo": "1ª secretária",
+    "ordem": 3,
+    "foto": "/equipe/jucilene.webp"
+  },
+  {
+    "id": "henrique",
+    "nome": "Henrique Moura",
+    "cargo": "2º secretário",
+    "ordem": 4,
+    "foto": "/equipe/henrique.webp"
+  },
+  {
+    "id": "larissa",
+    "nome": "Larissa de Oliveira",
+    "cargo": "1ª tesoureira",
+    "ordem": 5,
+    "foto": "/equipe/larissa.webp"
+  },
+  {
+    "id": "douglas",
+    "nome": "Douglas da Silva",
+    "cargo": "Conselheiro fiscal",
+    "ordem": 7,
+    "foto": "/equipe/douglas.webp"
+  },
+  {
+    "id": "wn",
+    "nome": "Wellington Soares",
+    "cargo": "Conselheiro fiscal",
+    "ordem": 8,
+    "foto": "/equipe/wn.webp"
+  }
 ]

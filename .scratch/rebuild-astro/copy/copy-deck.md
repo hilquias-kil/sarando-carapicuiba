@@ -59,7 +59,7 @@ Three fixes carried in from the audit, all of which the migration must actually 
 
 Título: `Contato`
 
-> A associação não tem formulário. Quem responde é gente da diretoria, pelo WhatsApp ou pelo e-mail.
+> Pode chamar para doar, ser voluntário ou tirar uma dúvida. Quem responde é alguém da diretoria, no WhatsApp ou no e-mail.
 
 ### Barra de consentimento
 
@@ -131,9 +131,9 @@ Regras que valem para a implementação, não só para o texto:
 ### Seção: ações (painel escuro, duas colunas)
 
 **Eyebrow:** `Ações`
-**H2:** `Cada ação tem data, comunidade e foto.`
+**H2:** `O que a associação já fez, ação por ação.`
 
-> É aqui que dá para conferir o que a associação fez, sem adjetivo no meio.
+> Cada uma com data, comunidade e as fotos do dia.
 
 Dois cards mais recentes, cada um com `Ver a ação`.
 
@@ -198,7 +198,7 @@ Este bloco pedia `Falar com a associação`, que abre o WhatsApp direto. Mudou n
 
 **H2:** `A diretoria`
 
-> São nove pessoas, nenhuma delas remunerada. Os nomes estão publicados porque uma associação que pede doação precisa dizer quem responde por ela.
+> Quem responde pela associação está aqui, com nome e cargo. Ninguém é remunerado: a diretoria é voluntária, como o resto da associação.
 
 Grade em mosaico, foto quadrada, nome e cargo. Nove, nesta ordem:
 
@@ -237,7 +237,7 @@ Os cargos aparecem no site atual sem acento e sem concordância ("1° Secretári
 **H1:** `Projetos`
 
 **Lead:**
-> Projeto é o que acontece toda semana na sede, na Av. Celeste, 94. São quatro, todos gratuitos e todos abertos a qualquer pessoa. Se você procura uma data específica numa comunidade, isso a gente chama de ação, e fica em outra página.
+> Toda semana, na sede, a associação abre quatro projetos gratuitos: capacitação profissional para quem procura trabalho, aulas de bateria, treino de jiu-jítsu e um encontro socioeducativo para crianças e adolescentes.
 
 Grade dos quatro cards, com a mesma linha usada na home.
 
@@ -398,9 +398,9 @@ Este é o projeto com a descrição mais fraca dos quatro, e é fraca porque o s
 **H1:** `Ações`
 
 **Lead:**
-> Ação é uma data. A gente escolhe uma comunidade de Carapicuíba, combina o que falta ali e leva.
->
-> Cada uma tem dia registrado e foto. É por isso que esta página existe: é aqui que dá para conferir o que foi feito, sem depender do que a gente escreve sobre a gente mesma.
+> A associação escolhe uma comunidade de Carapicuíba, combina o que falta ali e leva num dia marcado: cesta de alimento, roupa, calçado, brinquedo. Até agora, foi em Murão e Porto de Areia.
+
+As comunidades saem das próprias ações publicadas (`Intl.ListFormat` sobre `comunidade`), não de uma lista escrita à mão.
 
 Lista em ordem de data decrescente. Cada card: data em `tabular-nums`, título, comunidade, resumo, `Ver a ação`.
 
@@ -528,19 +528,17 @@ Registro diferente do resto do site: "nós" e "a sua empresa", frases curtas, me
 **H1:** `Para empresas`
 
 **Lead:**
-> Nós somos uma associação de Carapicuíba e trabalhamos com empresas de Carapicuíba.
->
-> Tem três formas de a sua empresa entrar, e elas estão em ordem de utilidade para nós: patrocinar uma ação, doar bens, doar dinheiro.
+> Nós somos uma associação de Carapicuíba e trabalhamos com empresas de Carapicuíba. A sua empresa pode entrar de três formas: patrocinando uma ação inteira, doando bens ou doando dinheiro. A primeira é a que volta com data, comunidade e foto para mostrar.
 
 ### 1. Patrocine uma ação
 
 **H2:** `Patrocine uma ação`
 
-> Uma ação é um dia numa comunidade da cidade. Tem data marcada, lista do que vai ser levado, e foto depois.
+> A sua empresa banca um dia inteiro numa comunidade da cidade. O que vai ser levado é combinado antes, a entrega tem data marcada e o dia é fotografado.
 >
-> A sua empresa banca uma inteira. No fim existe uma data, um bairro e um registro do que foi entregue, com o nome da empresa junto se ela quiser aparecer.
+> No fim existe uma data, um bairro e o registro do que foi entregue, com o nome da empresa junto se ela quiser aparecer.
 >
-> As quatro ações já feitas estão publicadas neste site, com data e foto. É exatamente esse o material que a sua empresa recebe depois.
+> As ações já feitas estão publicadas neste site, com data e foto. É exatamente esse o material que a sua empresa recebe depois.
 
 **CTA:** `Falar com a associação`
 
@@ -550,9 +548,9 @@ Registro diferente do resto do site: "nós" e "a sua empresa", frases curtas, me
 
 > O que a associação usa: alimento não perecível, roupa e calçado, material escolar, instrumento, material esportivo, material de construção para a sede.
 >
-> Antes de tirar mercadoria do estoque, confirme com o seu contador como isso entra na contabilidade da sua empresa. Essa parte é com ele.
+> Como a saída de mercadoria entra na contabilidade da sua empresa, quem diz é o seu contador. Vale confirmar com ele antes de separar o que sai do estoque.
 >
-> Se o que a sua empresa vende não é o que falta aqui, dinheiro rende mais. Com dinheiro nós compramos exatamente o que a ação precisa.
+> Se o que a sua empresa vende não é o que falta aqui, dinheiro rende mais: com dinheiro nós compramos exatamente o que a ação precisa.
 
 **CTA:** `Falar com a associação`
 
@@ -560,11 +558,9 @@ Registro diferente do resto do site: "nós" e "a sua empresa", frases curtas, me
 
 **H2:** `Doação em dinheiro`
 
-> A conta está no nome da própria associação e os dados estão no fim desta página. Nós emitimos a declaração de recebimento da doação.
+> A conta está no nome da própria associação. Depois do depósito, nós emitimos a declaração de recebimento da doação.
 >
-> Sobre imposto, quem responde é a contabilidade da sua empresa. Nós não prometemos benefício fiscal nenhum e não damos palpite sobre a sua declaração.
->
-> O que nós fazemos é papel: a declaração de recebimento da doação, e o depósito numa conta que está no nome da associação. Leve os dois para o seu contador e ele diz o resto.
+> Sobre imposto, quem responde é a contabilidade da sua empresa: nós não prometemos benefício fiscal nenhum. O que sai daqui é a declaração e um depósito rastreável numa conta da associação. Leve os dois para o seu contador.
 
 **Dados bancários**
 
@@ -580,11 +576,11 @@ Conta         1733434-4
 
 **H2:** `Quem está do outro lado`
 
-> A associação tem diretoria de nove pessoas, com nome e cargo publicados, sede própria com endereço de rua e CNPJ ativo. Está tudo em [Quem somos](/quem-somos).
+> A associação tem diretoria com nome e cargo publicados, sede própria com endereço de rua e CNPJ ativo. Está tudo em [Quem somos](/quem-somos).
 >
 > Ninguém aqui recebe salário, nem a diretoria. O que a sua empresa doar sai em cesta, material e transporte, e não em folha de pagamento.
 >
-> Se a sua empresa precisa de outros documentos para aprovar a doação, escreva antes de decidir o valor. Nós dizemos o que existe e o que ainda não existe.
+> Se a sua empresa precisa de outros documentos para aprovar a doação, escreva antes de decidir o valor. Nós dizemos na hora o que já está em mãos e o que teria que ser providenciado.
 
 | | |
 |---|---|
@@ -600,9 +596,7 @@ Conta         1733434-4
 
 > WhatsApp 11 98195-0343 é o caminho mais rápido, e é onde a diretoria responde.
 >
-> Para a sua empresa que precisa de rastro escrito, associacao-sarando-carapicuiba@outlook.com.
->
-> Não temos formulário. Ninguém aqui é pago para vigiar caixa de entrada de formulário, e uma mensagem parada é pior que nenhum canal.
+> Se a sua empresa precisa de registro escrito, escreva para associacao-sarando-carapicuiba@outlook.com.
 
 **CTA:** `Falar com a associação`
 

@@ -6,6 +6,11 @@ import { acoesPublicadas } from '../../lib/collections'
 import { destino } from '../../lib/site'
 
 const acoes = await acoesPublicadas()
+
+/** Derived from the entries so the lead never outlives the list it describes. */
+const ateAgora = `Até agora, foi em ${new Intl.ListFormat('pt-BR', {
+  type: 'conjunction',
+}).format([...new Set(acoes.map((acao) => acao.data.comunidade))])}.`
 ---
 
 <Base
@@ -16,20 +21,13 @@ const acoes = await acoesPublicadas()
   <section class="section section--canvas">
     <div class="wrap">
       <h1>Ações</h1>
-      <div class="lead measure espaco-s">
-        <p>
-          Ação é uma data. A gente escolhe uma comunidade de Carapicuíba, combina o que falta
-          ali e leva.
-        </p>
-        <p class="espaco-s">
-          Cada uma tem dia registrado e foto. É por isso que esta página existe: é aqui que dá
-          para conferir o que foi feito, sem depender do que a gente escreve sobre a gente
-          mesma.
-        </p>
-      </div>
+      <p class="lead measure espaco-s">
+        A associação escolhe uma comunidade de Carapicuíba, combina o que falta ali e leva num
+        dia marcado: cesta de alimento, roupa, calçado, brinquedo. {ateAgora}
+      </p>
       <SectionRule />
       <div class="lista-acoes">
-        {acoes.map((acao) => <AcaoCard acao={acao} lista />)}
+        {acoes.map((acao) => <AcaoCard acao={acao} lista nivel={2} />)}
       </div>
     </div>
   </section>

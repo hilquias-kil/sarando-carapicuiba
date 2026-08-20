@@ -203,9 +203,11 @@ One file, `src/styles/global.css`, imported once from the base layout. There is 
 
   --text-eyebrow: 0.70rem;   --text-eyebrow--letter-spacing: 0.14em;
   --text-small:   0.875rem;
+  --text-ui:      0.95rem;   /* added in build: buttons, nav, brand line */
   --text-body:    1.0625rem; --text-body--line-height: 1.7;
   --text-lead:    1.125rem;
   --text-h3:      1.25rem;
+  --text-titulo:  1.35rem;   /* added in build: card title on a photo, mobile nav */
   --text-h2:      clamp(1.7rem, 3.6vw, 2.6rem);
   --text-h1:      clamp(2.3rem, 6vw, 4.4rem);
 
@@ -220,8 +222,33 @@ Note the family names: `@fontsource-variable` registers **"Lora Variable"** and 
 ### Three rules that will be broken if they are not enforced
 
 1. **`--color-accent` is never body-size text.** `#E5262C` on canvas is 4.24:1 and fails. Body-size accent text on canvas is `--color-accent-deep`; on dark panels it is `--color-accent-lift`. Full-saturation red is for fills, large display type and non-text.
-2. **Any white text over a photograph sits on a scrim of at least 0.70.** Composited against a worst-case white photo that yields 7.03:1. Below 0.70 the design is betting on the photograph being dark, which nobody can guarantee at publish time. The hero gradient is `linear-gradient(180deg, rgba(20,17,16,0.75) 0%, rgba(20,17,16,0.15) 38%, rgba(20,17,16,0.88) 100%)`; the top stop is 0.75 because the inverted nav sits there, and it is the fallback, so there is no separate solid one.
+2. **Any white text over a photograph sits on a scrim of at least 0.70.** Composited against a worst-case white photo that yields 7.03:1. Below 0.70 the design is betting on the photograph being dark, which nobody can guarantee at publish time.
+
+   **Amended after the build, 2026-08-20.** The percentage-stop hero gradient this section originally specified — `rgba(20,17,16,0.75) 0%, 0.15 38%, 0.88 100%` — does not hold the floor it states. Percentages resolve against the hero box, and the copy is bottom-aligned inside it, so the text lands in the transparent middle: measured **0.25 behind the home `h1`** and **0.30 behind the `/empresas` lead**, on both desktop and mobile. It only ever read as acceptable because those two photographs happen to be dark where the type sits, which is the exact bet the rule forbids.
+
+   The shipped scrims are anchored in **pixels to the thing they protect**, so the floor is independent of hero height and copy length:
+
+   ```css
+   /* the band under the inverted header, whose own box is ~70px tall */
+   .scrim-topo  { background: linear-gradient(180deg,
+                    rgba(20,17,16,0.80) 0,
+                    rgba(20,17,16,0.70) 96px,
+                    rgba(20,17,16,0)    260px); }
+
+   /* the band under the hero copy: starts 5rem above the text block and is
+      already at 0.74 where the block begins */
+   .scrim-texto { background: linear-gradient(180deg,
+                    rgba(20,17,16,0)    0,
+                    rgba(20,17,16,0.74) 5rem,
+                    rgba(20,17,16,0.90) 100%); }
+   ```
+
+   Measured after the change, at 390 / 1024 / 1440: every hero string sits between **0.75 and 0.87**, worst-case 7.85:1 to 13.18:1. The `.scrim-texto` band is carried by an element inside `.hero__conteudo` that bleeds `-100vw` on both sides and is clipped by the hero.
+
+   Both heroes are now one component, `src/components/PhotoHero.astro`, rather than two copies of the same CSS under different class names.
 3. **Panel rhythm is a layout primitive, not a per-page choice.** A page declares each section `canvas` or `panel` and the primitive supplies the ground colour, the matching ink tokens and the vertical padding. Without this the system dissolves by the third page.
+
+   Two adjacent sections on the *same* ground drop the second one's top padding (`.section--canvas + .section--canvas`, and the panel twin). One field gets one section gap; without the rule the two paddings add up to a 144px hole, which happened on seven of the seventeen pages.
 
 ### Layout primitives
 
@@ -241,7 +268,7 @@ Vertical rhythm on major sections: `clamp(2.5rem, 6vw, 4.5rem)` block padding.
 |---|---|
 | Header / nav | Two states: **inverted** over the hero photo (home only), **solid canvas** everywhere else. Five items. Mobile is a full-screen overlay; the existing pattern works, rebuilt as a `<script>` class toggle rather than React state. |
 | Footer | Dark `#241C1A`. Address, WhatsApp, e-mail, Instagram, CNPJ, nav, privacy link. No LinkedIn, no Facebook. |
-| Page hero | **photo hero** (bleed, scrim ≥0.70) for home and `/empresas`; **plain hero** (canvas, display heading, no photo) for index and legal pages. The old thin banner strips retire with their images. |
+| Page hero | **photo hero** (bleed, scrim ≥0.70) for home and `/empresas`; **plain hero** (canvas, display heading, no photo) for index and legal pages. The old thin banner strips retire with their images. Built as one component, `PhotoHero.astro`, with `altura="cheia"` (home) and `altura="curta"`; see the scrim amendment in rule 2 above. |
 | Ação card | 16:10 image, dateline in `tabular-nums`, título, resumo. Two-up on panel, list on canvas. |
 | Projeto card | **3:4 portrait** image, caption gradient reaching 0.85, título. Four-up desktop, two-up mobile. |
 | Board member | Square photo, nome, cargo. Explicit `width`/`height`, never rendered above 200px. Arranged as the mosaic grid. |
@@ -249,7 +276,7 @@ Vertical rhythm on major sections: `clamp(2.5rem, 6vw, 4.5rem)` block padding.
 | Participation block | The shared "Como participar". One instance, four project pages plus `/projetos`. |
 | CTA block | One label per intent, from the five in the copy deck. |
 | Section rule | Four squares stepping in opacity 0.25 / 0.5 / 0.75 / 1 in the accent. The one ornament in the system. |
-| **Consent bar** | **New, added by the legal-pages ticket and not in the prototype.** Fixed to the bottom of the viewport, `--color-canvas` ground, hairline `--color-rule` on top, one line of text and two buttons. Not a modal, does not block reading. Copy and behaviour in the deck, section 0. |
+| **Consent bar** | **New, added by the legal-pages ticket and not in the prototype.** Fixed to the bottom of the viewport, `--color-canvas` ground, hairline `--color-rule` on top, one line of text and two buttons. Not a modal, does not block reading. Copy and behaviour in the deck, section 0. While visible it publishes its height as `--consent-h`, taken by `body` as bottom padding and by `html` as `scroll-padding-bottom`, so it cannot sit on top of the end of the document or of a keyboard focus target. |
 
 ### The mosaic motif
 

@@ -79,9 +79,21 @@ import { site } from '../lib/site'
       gtag('config', ga4)
     }
 
+    // The bar is fixed over the page, so the page has to give back the height
+    // it covers. Without this the last thing on a page — and any control the
+    // keyboard tabs to down there — sits underneath it.
+    function reservarEspaco() {
+      var altura = bar && !bar.hidden ? bar.offsetHeight : 0
+      document.documentElement.style.setProperty('--consent-h', altura + 'px')
+    }
+
     var escolha = ler()
     if (escolha === 'granted') carregarGA()
-    else if (escolha !== 'denied' && bar) bar.hidden = false
+    else if (escolha !== 'denied' && bar) {
+      bar.hidden = false
+      reservarEspaco()
+      addEventListener('resize', reservarEspaco)
+    }
 
     document.querySelectorAll('[data-consent]').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -90,6 +102,8 @@ import { site } from '../lib/site'
           localStorage.setItem(KEY, JSON.stringify({ escolha: valor, em: Date.now() }))
         } catch (e) {}
         if (bar) bar.hidden = true
+        reservarEspaco()
+        removeEventListener('resize', reservarEspaco)
         if (valor === 'granted') carregarGA()
       })
     })

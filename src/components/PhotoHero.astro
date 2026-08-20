@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
+interface Props {
+  foto: ImageMetadata
+  alt: string
+  /** `cheia` is the home hero. `curta` is every other photo hero. */
+  altura?: 'cheia' | 'curta'
+  /** True only where the hero is the first paint, so the image loads eagerly. */
+  prioritaria?: boolean
+  /** The inverted header sits over the photograph and needs the top band. */
+  cabecalhoInvertido?: boolean
+}
+
+const {
+  foto,
+  alt,
+  altura = 'curta',
+  prioritaria = false,
+  cabecalhoInvertido = false,
+} = Astro.props
+---
+
+<section class:list={['hero', 'bleed', `hero--${altura}`]}>
+  <Image
+    src={foto}
+    alt={alt}
+    widths={[800, 1280, 1920]}
+    sizes="100vw"
+    loading={prioritaria ? 'eager' : 'lazy'}
+    fetchpriority={prioritaria ? 'high' : 'auto'}
+    class="hero__foto"
+  />
+  {cabecalhoInvertido && <div class="scrim-topo hero__topo" aria-hidden="true" />}
+  <div class="wrap hero__conteudo">
+    <div class="scrim-texto hero__banda" aria-hidden="true"></div>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: var(--color-panel);
+    overflow: hidden;
+  }
+  .hero--cheia {
+    min-height: min(88vh, 780px);
+  }
+  .hero--curta {
+    min-height: min(52vh, 460px);
+  }
+
+  .hero__foto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__topo {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 260px;
+  }
+
+  .hero__conteudo {
+    position: relative;
+    z-index: 2;
+    color: var(--color-on-panel);
+    padding-block: clamp(2.5rem, 8vw, 5rem);
+    max-width: 1180px;
+  }
+
+  /* The band bleeds past the wrap on both sides and is clipped by the hero.
+     Tying it to the copy rather than to the hero is what keeps the 0.70 floor
+     true when the copy or the hero changes height. */
+  .hero__banda {
+    position: absolute;
+    z-index: -1;
+    inset-block: -5rem 0;
+    inset-inline: -100vw;
+  }
+</style>
+
+<style is:global>
+  /* Slotted content carries the page's scope, not this component's. */
+  .hero h1 {
+    max-width: 18ch;
+  }
+
+  .hero__apoio {
+    margin-top: 1.2rem;
+    max-width: 52ch;
+    font-size: var(--text-lead);
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.8rem;
+  }
+</style>

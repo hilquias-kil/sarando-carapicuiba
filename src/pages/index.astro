@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets'
 import Base from '../layouts/Base.astro'
+import PhotoHero from '../components/PhotoHero.astro'
 import ProjetoCard from '../components/ProjetoCard.astro'
 import AcaoCard from '../components/AcaoCard.astro'
 import SectionRule from '../components/SectionRule.astro'
-import hero from '../assets/hero.webp'
+import hero from '../assets/hero-reserva.webp'
 import { cta, destino } from '../lib/site'
 import { projetosPublicados, acoesPublicadas } from '../lib/collections'
 
@@ -18,30 +18,24 @@ const acoes = await acoesPublicadas(2)
   ogDescription="Quatro projetos gratuitos na sede e ações com data e foto nas comunidades de Carapicuíba."
   invertedHeader
 >
-  <section class="hero bleed">
-    <Image
-      src={hero}
-      alt="Voluntários da associação numa ação em uma comunidade de Carapicuíba"
-      widths={[800, 1280, 1920]}
-      sizes="100vw"
-      loading="eager"
-      fetchpriority="high"
-      class="hero__foto"
-    />
-    <div class="scrim-hero hero__scrim"></div>
-    <div class="wrap hero__conteudo">
-      <h1>Aula de graça na sede. Cesta entregue na comunidade.</h1>
-      <p class="hero__apoio">
-        A Associação Sarando Carapicuíba fica na Av. Celeste, 94, no Centro de Carapicuíba. São
-        quatro projetos abertos toda semana na sede, e ações levadas a comunidades da cidade
-        como o Murão e o Porto de Areia.
-      </p>
-      <p class="hero__ctas">
-        <a class="btn btn--primary" href={destino.doar}>{cta.doar}</a>
-        <a class="btn btn--onphoto" href={destino.voluntario}>{cta.voluntario}</a>
-      </p>
-    </div>
-  </section>
+  <PhotoHero
+    foto={hero}
+    alt="Voluntários da associação numa ação em uma comunidade de Carapicuíba"
+    altura="cheia"
+    prioritaria
+    cabecalhoInvertido
+  >
+    <h1>Aula de graça na sede. Cesta entregue na comunidade.</h1>
+    <p class="hero__apoio">
+      A Associação Sarando Carapicuíba fica na Av. Celeste, 94, no Centro de Carapicuíba. São
+      quatro projetos abertos toda semana na sede, e ações levadas a comunidades da cidade como
+      o Murão e o Porto de Areia.
+    </p>
+    <p class="hero__ctas">
+      <a class="btn btn--primary" href={destino.doar}>{cta.doar}</a>
+      <a class="btn btn--onphoto" href={destino.voluntario}>{cta.voluntario}</a>
+    </p>
+  </PhotoHero>
 
   <section class="section section--canvas">
     <div class="wrap">
@@ -83,10 +77,8 @@ const acoes = await acoesPublicadas(2)
   <section class="section section--panel">
     <div class="wrap">
       <p class="eyebrow">Ações</p>
-      <h2>Cada ação tem data, comunidade e foto.</h2>
-      <p class="secondary measure espaco-s">
-        É aqui que dá para conferir o que a associação fez, sem adjetivo no meio.
-      </p>
+      <h2>O que a associação já fez, ação por ação.</h2>
+      <p class="secondary measure espaco-s">Cada uma com data, comunidade e as fotos do dia.</p>
       <div class="duas-acoes">
         {acoes.map((acao) => <AcaoCard acao={acao} />)}
       </div>
@@ -128,47 +120,6 @@ const acoes = await acoesPublicadas(2)
 </Base>
 
 <style>
-  .hero {
-    position: relative;
-    min-height: min(88vh, 780px);
-    display: flex;
-    align-items: flex-end;
-    background: var(--color-panel);
-    overflow: hidden;
-  }
-  .hero__foto {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .hero__scrim {
-    position: absolute;
-    inset: 0;
-  }
-  .hero__conteudo {
-    position: relative;
-    z-index: 2;
-    color: var(--color-on-panel);
-    padding-block: clamp(2.5rem, 8vw, 5rem);
-    max-width: 1180px;
-  }
-  .hero h1 {
-    max-width: 18ch;
-  }
-  .hero__apoio {
-    margin-top: 1.2rem;
-    max-width: 52ch;
-    font-size: var(--text-lead);
-  }
-  .hero__ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    margin-top: 1.8rem;
-  }
-
   .explica {
     display: grid;
     gap: 1.1rem;

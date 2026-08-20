@@ -4,9 +4,12 @@ import type { CollectionEntry } from 'astro:content'
 
 interface Props {
   projeto: CollectionEntry<'projetos'>
+  /** 2 where the grid follows the h1 directly, 3 where a section h2 introduces it. */
+  nivel?: 2 | 3
 }
-const { projeto } = Astro.props
+const { projeto, nivel = 3 } = Astro.props
 const { titulo, capa, capaAlt, linha } = projeto.data
+const Titulo = `h${nivel}` as 'h2' | 'h3'
 ---
 
 <article class="card projeto">
@@ -14,7 +17,7 @@ const { titulo, capa, capaAlt, linha } = projeto.data
     <div class="card-media projeto__media">
       <Image src={capa} alt={capaAlt} />
       <div class="scrim-caption projeto__caption">
-        <h3>{titulo}</h3>
+        <Titulo class="projeto__titulo">{titulo}</Titulo>
       </div>
     </div>
     <p class="projeto__linha">{linha}</p>
@@ -37,8 +40,11 @@ const { titulo, capa, capaAlt, linha } = projeto.data
     padding: 2.5rem 1rem 1rem;
     color: #fff;
   }
-  .projeto__caption h3 {
-    font-size: 1.35rem;
+  /* The caption title keeps one size whether it renders as h2 or h3: the
+     heading level answers to the page outline, not to the type ramp. */
+  .projeto__titulo {
+    font-size: var(--text-titulo);
+    letter-spacing: normal;
   }
   .projeto__linha {
     margin-top: 0.7rem;
